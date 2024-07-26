@@ -35,7 +35,7 @@ install_pkgs() {
 
 install_aur_pkgs() {
     echo -e "${green}[*] Installing packages with yay.${no_color}"
-    yay -S --noconfirm --needed i3-resurrect ffcast dhcpcd iwd ntfs-3g ntp pulsemixer vnstat light bibata-cursor-theme-bin
+    yay -S --noconfirm --needed i3lock i3-resurrect ffcast dhcpcd iwd ntfs-3g ntp pulsemixer vnstat light bibata-cursor-theme-bin
 }
 
 create_default_directories() {
@@ -99,7 +99,7 @@ install_zsh() {
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-syntax-highlighting
     git clone https://github.com/MichaelAquilina/zsh-you-should-use.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/you-should-use
     git clone https://github.com/fdellwing/zsh-bat.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-bat
-    cp ./others/.zshrc ~/.zshrc
+    cp ./.zshrc ~/
     echo -e "${green}[*] Setting Zsh as default shell.${no_color}"
     chsh -s "$(which zsh)"
     sudo chsh -s "$(which zsh)"

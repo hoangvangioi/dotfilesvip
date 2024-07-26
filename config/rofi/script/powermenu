@@ -4,16 +4,13 @@ DIR="$HOME/.config"
 rofi_cmd="rofi -theme $DIR/rofi/themes/powermenu.rasi"
 uptime=$(uptime -p | sed -e 's/up //g')
 
-# Handle user choice
 handle_choice() {
-    ans=$(rofi -dmenu -i -no-fixed-num-lines -p "Are You Sure? : " -theme "$DIR"/rofi/themes/confirm.rasi)
-    if [ "$ans" = "y" ]; then
-        "$1"
-    elif [ "$ans" = "n" ]; then
-        exit
-    else
-        rofi -theme "$DIR"/rofi/themes/askpass.rasi -e "Options  -  yes / y / no / n"
-    fi
+    ans=$(rofi -dmenu -i -no-fixed-num-lines -p "Are You Sure? : " -theme "$DIR/rofi/themes/confirm.rasi")
+    case "$ans" in
+        y) eval "$1" || rofi -theme "$DIR/rofi/themes/askpass.rasi" -e "Failed to execute $1";;
+        n) exit 0;;
+        *) rofi -theme "$DIR/rofi/themes/askpass.rasi" -e "Options  -  yes / y / no / n";;
+    esac
 }
 
 # Options
@@ -39,10 +36,10 @@ case $chosen in
     handle_choice "systemctl hibernate"
     ;;
 "$lock")
-    i3lock -i ~/.config/rofi/script/material-ocean.png
+    i3lock -i "$DIR/script/material-ocean.png"
     ;;
 "$suspend")
-    handle_choice "systemctl suspend"
+    handle_choice "systemctl suspend && i3lock -i $DIR/script/material-ocean.png"
     ;;
 "$logout")
     handle_choice "i3-msg exit"
