@@ -149,11 +149,9 @@ install_sddm() {
     echo -e "${green}[*] Installing sddm theme.${no_color}"
     "$aurhelper" -S --noconfirm --needed qt6-5compat qt6-declarative qt6-svg sddm
     sudo systemctl enable sddm.service
-
-    sudo cp -r sddm-theme /usr/share/sddm/themes
-
+    sudo cp -r sddm-arch-theme /usr/share/sddm/themes
     echo "[Theme]
-    Current=sddm-theme" | sudo tee /etc/sddm.conf
+Current=sddm-arch-theme" | sudo tee /etc/sddm.conf
 }
 
 finishing() {
@@ -224,3 +222,5 @@ install_gtk_theme
 install_zsh
 
 install_ibus_bamboo
+
+install_sddm
