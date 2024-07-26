@@ -1,13 +1,12 @@
-import QtQuick 2.11
-import QtQuick.Controls 2.4
-import QtGraphicalEffects 1.0
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import Qt5Compat.GraphicalEffects
 
 Item {
     id: sessionButton
     height: root.font.pointSize
     width: parent.width / 2
     anchors.horizontalCenter: parent.horizontalCenter
-
     property var selectedSession: selectSession.currentIndex
     property string textConstantSession
     property int loginButtonWidth
@@ -15,7 +14,7 @@ Item {
 
     ComboBox {
         id: selectSession
-
+        height: root.font.pointSize * 2
         hoverEnabled: true
         anchors.left: parent.left
         Keys.onPressed: {
@@ -45,6 +44,7 @@ Item {
             contentItem: Text {
                 text: model.name
                 font.pointSize: root.font.pointSize * 0.8
+                font.family: root.font.family
                 color: selectSession.highlightedIndex === index ? root.palette.highlight.hslLightness >= 0.7 ? "#444444" : "white" : root.palette.window.hslLightness >= 0.8 ? root.palette.highlight.hslLightness >= 0.8 ? "#444444" : root.palette.highlight : "white"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
@@ -61,12 +61,13 @@ Item {
 
         contentItem: Text {
             id: displayedItem
-            text: (config.TranslateSession || (textConstantSession + ":")) + " " + selectSession.currentText
+            text: selectSession.currentText
             color: root.palette.text
             verticalAlignment: Text.AlignVCenter
             anchors.left: parent.left
             anchors.leftMargin: 3
             font.pointSize: root.font.pointSize * 0.8
+            font.family: root.font.family
             Keys.onReleased: parent.popup.open()
         }
 

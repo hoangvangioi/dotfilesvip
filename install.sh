@@ -147,11 +147,13 @@ install_vsc() {
 
 install_sddm() {
     echo -e "${green}[*] Installing sddm theme.${no_color}"
-    "$aurhelper" -S --noconfirm --needed qt5-graphicaleffects qt5-quickcontrols2 qt5-svg sddm
+    "$aurhelper" -S --noconfirm --needed qt6-5compat qt6-declarative qt6-svg sddm
     sudo systemctl enable sddm.service
-    sudo cp -r ./sugar-candy/ /usr/share/sddm/themes/sugar-candy
+
+    sudo cp -r sddm-theme /usr/share/sddm/themes
+
     echo "[Theme]
-    Current=sugar-candy" | sudo tee /etc/sddm.conf
+    Current=sddm-theme" | sudo tee /etc/sddm.conf
 }
 
 finishing() {

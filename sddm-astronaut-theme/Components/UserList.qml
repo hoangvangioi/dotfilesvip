@@ -1,6 +1,6 @@
-import QtQuick 2.11
-import QtQuick.Controls 2.4
-import QtGraphicalEffects 1.0
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import Qt5Compat.GraphicalEffects
 
 Item {
     id: usernameField
@@ -57,7 +57,7 @@ Item {
                 icon.width: parent.height * 0.25
                 enabled: false
                 icon.color: root.palette.text
-                icon.source: Qt.resolvedUrl("../assets/User.svgz")
+                icon.source: Qt.resolvedUrl("../Assets/User.svg")
         }
 
         background: Rectangle {

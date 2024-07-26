@@ -1,8 +1,8 @@
-import QtQuick 2.11
-import QtQuick.Layouts 1.11
-import QtQuick.Controls 2.4
-import QtGraphicalEffects 1.0
-import "components"
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15
+import Qt5Compat.GraphicalEffects
+import "Components"
 
 Pane {
     id: root
@@ -16,6 +16,7 @@ Pane {
     padding: config.ScreenPadding
     palette.button: "transparent"
     palette.highlight: config.AccentColor
+    palette.highlightedText: config.OverrideTextFieldColor !== "" ? config.OverrideTextFieldColor : root.palette.highlight
     palette.text: config.MainColor
     palette.buttonText: config.MainColor
     palette.window: config.BackgroundColor
@@ -104,7 +105,7 @@ Pane {
 
         Loader {
             id: virtualKeyboard
-            source: "components/VirtualKeyboard.qml"
+            source: "Components/VirtualKeyboard.qml"
             state: "hidden"
             property bool keyboardActive: item ? item.active : false
             onKeyboardActiveChanged: keyboardActive ? state = "visible" : state = "hidden"
