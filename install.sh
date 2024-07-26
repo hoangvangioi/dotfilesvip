@@ -29,12 +29,12 @@ install_aur_helper(){
 
 install_pkgs(){
     echo -e "${green}[*] Installing packages with pacman.${no_color}"
-    sudo pacman -S --noconfirm --needed acpi alsa-utils base-devel curl git pulseaudio pulseaudio-alsa xorg xorg-xinit alacritty btop dunst feh firefox i3-wm libnotify light nemo neofetch neovim pacman-contrib picom polybar ranger rofi scrot slop xclip zathura zathura-pdf-mupdf
+    sudo pacman -S --noconfirm --needed acpi alsa-utils base-devel curl git pulseaudio pulseaudio-alsa xorg xorg-xinit alacritty btop dunst feh firefox i3-wm libnotify nemo neofetch neovim pacman-contrib picom polybar ranger rofi scrot slop xclip zathura zathura-pdf-mupdf
 }
 
 install_aur_pkgs(){
     echo -e "${green}[*] Installing packages with $aurhelper.${no_color}"
-    "$aurhelper" -S --noconfirm --needed i3lock-color i3-resurrect ffcast dhcpcd iwd ntfs-3g ntp pulsemixer vnstat
+    "$aurhelper" -S --noconfirm --needed i3-resurrect ffcast dhcpcd iwd ntfs-3g ntp pulsemixer vnstat light
 }
 
 create_default_directories(){
@@ -52,7 +52,6 @@ create_backup(){
     [ -d "$config_directory"/dunst ] && mv "$config_directory"/dunst "$config_directory"/dunst_"$date" && echo "dunst configs detected, backing up."
     [ -d "$config_directory"/gtk-3.0 ] && mv "$config_directory"/gtk-3.0 "$config_directory"/gtk-3.0_"$date" && echo "gtk-3.0 configs detected, backing up."
     [ -d "$config_directory"/i3 ] && mv "$config_directory"/i3 "$config_directory"/i3_"$date" && echo "i3 configs detected, backing up."
-
     [ -d "$config_directory"/neofetch ] && mv "$config_directory"/neofetch "$config_directory"/neofetch_"$date" && echo "neofetch configs detected, backing up."
     [ -d "$config_directory"/nvim ] && mv "$config_directory"/nvim "$config_directory"/nvim_"$date" && echo "nvim configs detected, backing up."
     [ -d "$config_directory"/polybar ] && mv "$config_directory"/polybar "$config_directory"/polybar_"$date" && echo "polybar configs detected, backing up."
@@ -94,13 +93,32 @@ install_gtk_theme(){
 }
 
 install_zsh(){
-    echo -e "${green}[*] Installing zsh.${no_color}"    
-    git clone https://github.com/zsh-users/zsh-autosuggestions.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-syntax-highlighting
-    git clone https://github.com/zsh-users/zsh-completions.git "${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}"/plugins/zsh-completions
-    git clone https://github.com/marlonrichert/zsh-autocomplete.git "${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}"/plugins/zsh-autocomplete
-    cp ./uysal.zsh-theme "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/themes
-    cp ./.zshrc "$HOME"
+    echo -e "${green}[*] Installing zsh and oh-my-zsh...${no_color}"
+    "$aurhelper" -S --noconfirm --needed zsh
+    echo exit | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/you-should-use
+    git clone https://github.com/fdellwing/zsh-bat.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-bat
+    cp ./others/.zshrc ~/.zshrc    
+    echo -e "${green}[*] Setting Zsh as default shell.${no_color}"
+    chsh -s $(which zsh)
+    sudo chsh -s $(which zsh)
+}
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+install_ibus_bamboo(){
+    echo -e "${green}[*] Installing ibus-bamboo.${no_color}"
+    "$aurhelper" -S --noconfirm --needed ibus ibus-bamboo-git
+    dconf load /desktop/ibus/ < $HOME/.config/ibus/ibus.dconf
+    sudo tee -a /etc/profile <<END
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT4_IM_MODULE=ibus
+export CLUTTER_IM_MODULE=ibus
+export GLFW_IM_MODULE=ibus
+END
 }
 
 install_vsc(){
@@ -131,9 +149,7 @@ install_sddm(){
 finishing(){
     echo -e "${green}[*] Chmoding light.${no_color}"
     sudo chmod +s /usr/bin/light
-    echo -e "${green}[*] Setting Zsh as default shell.${no_color}"
-    chsh -s /bin/zsh
-    sudo chsh -s /bin/zsh
+
     echo -e "${green}[*] Updating nvim extensions.${no_color}"
     nvim +PackerSync
 }
@@ -190,6 +206,6 @@ do
     esac
 done
 
-
+zsh
 
 # yay bibata-cursor-theme-bin

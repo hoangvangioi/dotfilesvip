@@ -1,4 +1,4 @@
-# Keyitdev Dotfiles 
+# Dotfiles 
 
 ## [Watch on Youtube](https://youtu.be/tSreyGcCMB4) <img alt="" align="right" src="https://img.shields.io/github/forks/keyitdev/dotfiles?color=bf616a&labelColor=1b1b25&style=for-the-badge"/> <img alt="" align="right" src="https://img.shields.io/github/stars/keyitdev/dotfiles?color=dd864a&labelColor=1b1b25&style=for-the-badge"/>
 
@@ -6,16 +6,12 @@
 
 The **Arch Linux** & **i3wm** dotfiles! 
 
-This is the third version of my dotfiles, as I gain more experience I am able to create more profesional dotfiles.
-
-**However, if you want to check older version see [v2 branch](https://github.com/Keyitdev/dotfiles/tree/v2).**
-
 ## Information
 
-<img src="https://github.com/Keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/1.png?raw=true" alt="Rice Showcase" align="right" width="400px">
+<img src="https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/1.png?raw=true" alt="Rice Showcase" align="right" width="400px">
 
 - **OS:** [Arch Linux](https://archlinux.org)
-- **WM:** [i3-gaps](https://github.com/Airblader/i3)
+- **WM:** [i3-wm](https://i3wm.org)
 - **Terminal:** [alacritty](https://github.com/alacritty/alacritty)
 - **Bar:** [polybar](https://github.com/polybar/polybar)
 - **Shell:** [zsh](https://www.zsh.org/)
@@ -26,10 +22,10 @@ This is the third version of my dotfiles, as I gain more experience I am able to
 ## Automatic installation
 
 ```sh
-git clone -b v3 --depth 1 https://www.github.com/keyitdev/dotfiles.git
+git clone https://www.github.com/keyitdev/dotfiles.git
 cd dotfiles
-chmod +x install-on-arch.sh
-./install-on-arch.sh
+chmod +x install.sh
+./install.sh
 ```
 > Warning: Remember to always read the scripts you run from the internet first.
 
@@ -39,101 +35,32 @@ chmod +x install-on-arch.sh
 
 ### neofetch 
 
-![](https://github.com/Keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/1.png?raw=true)
+![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/1.png?raw=true)
 
 ### vsc & ncmpcpp & cava
 
-![](https://github.com/Keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/2.png?raw=true)
+![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/2.png?raw=true)
 
 ### rofi & dunst
 
-![](https://github.com/Keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/3.png?raw=true)
+![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/3.png?raw=true)
 
 <details>
 <summary><h3>More screenshots</h3></summary>
 
 ### nemo & nvim & ranger
 
-![](https://github.com/Keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/4.png?raw=true)
+![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/4.png?raw=true)
 
 ### i3lock-color
 
-![](https://github.com/Keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/5.png?raw=true)
+![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/5.png?raw=true)
 
 ### sddm
 
-![](https://github.com/Keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/6.png?raw=true)
+![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/6.png?raw=true)
 
 </details>
-
-## Manual Installation
-
-1. Clone this repository.
-    ```sh
-    git clone -b v3 --depth 1 https://www.github.com/keyitdev/dotfiles.git
-    ```
-
-2. Install an AUR helper (for example, `yay` in `"$HOME"/.srcs`).
-    ```sh
-    git clone https://aur.archlinux.org/yay.git "$HOME"/.srcs/yay
-	cd "$HOME"/.srcs/yay/ && makepkg -si
-    ```
-
-3. Install dependencies.
-    ```sh
-    yay -S --needed acpi alsa-utils base-devel curl git pulseaudio pulseaudio-alsa xorg xorg-xinit alacritty btop code dunst feh ffcast firefox i3-gaps i3lock-color i3-resurrect libnotify light mpc mpd ncmpcpp nemo neofetch neovim oh-my-zsh-git pacman-contrib papirus-icon-theme picom polybar ranger rofi scrot slop xclip zathura zathura-pdf-mupdf zsh   
-    ```
-
-4. Create default directories.
-    ```sh
-    mkdir -p "$HOME"/.config
-    mkdir -p  /usr/local/bin
-    mkdir -p  /usr/share/themes
-    mkdir -p "$HOME"/Pictures/wallpapers
-    ```
-
-5. Copy configs, scripts, fonts, wallpaper, vsc configs, zsh config.
-    ```sh
-    cp -r ./config/* "$HOME"/.config
-    sudo cp -r ./scripts/* /usr/local/bin
-    sudo cp -r ./fonts/* /usr/share/fonts
-    cp -r ./wallpapers/* "$HOME"/Pictures/wallpapers
-    sudo cp ./keyitdev.zsh-theme /usr/share/oh-my-zsh/custom/themes
-    cp ./.zshrc "$HOME"
-    ```
-
-6. Make Light executable, set zsh as default shell, update nvim extensions, refresh font cache.
-    ```sh
-    sudo chmod +s /usr/bin/light
-    chsh -s /bin/zsh
-    sudo chsh -s /bin/zsh
-    nvim +PackerSync
-    fc-cache -fv
-    ```
-
-7. Install vsc theme.
-    ```sh
-    code --install-extension zhuangtongfa.Material-theme
-    cp ./vsc/settings.json "$HOME"/.config/Code\ -\ OSS/User
-    ```
-
-8. Install gtk theme.
-    ```sh
-    mkdir -p "$HOME"/.config/gtk-4.0
-    git clone https://github.com/Fausto-Korpsvart/Rose-Pine-GTK-Theme
-    sudo cp -r ./Rose-Pine-GTK-Theme/themes/RosePine-Main-BL  /usr/share/themes/RosePine-Main
-    sudo cp -r ./Rose-Pine-GTK-Theme/themes/RosePine-Main-BL/gtk-4.0/* "$HOME"/.config/gtk-4.0
-    ```
-    
-9. Install sddm and sddm flower theme.
-    ```sh
-    yay -S --needed qt5-graphicaleffects qt5-quickcontrols2 qt5-svg sddm
-    sudo git clone https://github.com/keyitdev/sddm-flower-theme.git /usr/share/sddm/themes/sddm-flower-theme
-    sudo cp /usr/share/sddm/themes/sddm-flower-theme/Fonts/* /usr/share/fonts/
-    echo "[Theme]
-    Current=sddm-flower-theme" | sudo tee /etc/sddm.conf
-    ```
-
     
 ## Detailed information
 
@@ -164,7 +91,7 @@ chmod +x install-on-arch.sh
 - **Neovim Theme:** [AstroNvim](https://github.com/kabinspace/AstroVim)
 - **Icons:** [Papirus dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - **GTK Theme:** [Rose Pine](https://github.com/Fausto-Korpsvart/Rose-Pine-GTK-Theme)
-- **Display Manager Theme:** [Sddm-flower-theme](https://github.com/Keyitdev/sddm-flower-theme)
+- **Display Manager Theme:** [Sddm-flower-theme](https://github.com/keyitdev/sddm-flower-theme)
 	
 ### Fonts
 	
@@ -245,22 +172,5 @@ Note: `Win` refers to the `Super/Mod` key.
     - Open picom configuration `"$HOME"/.config/picom/picom.conf`. 
     - Change picom backend from `backend = "glx";` to `backend = "xrender";`.
 
-## Support and Thankies
-
-You can support me simply by dropping a **star** on **[github](https://github.com/Keyitdev/dotfiles/tree/v3)** or giving a **subscription** on **[YouTube](http://www.youtube.com/channel/UCVoGVyAP2sHPQyegwBMJKyQ?sub_confirmation=1)**.
-
-<!-- If you enjoyed it and would like to show your appreciation, you can **tip** using **[kofi]()** or **[paypal]()**. -->
-
-**Big thanks to:**
-[adi1090x](https://github.com/adi1090x),
-[Totoro](https://github.com/totoro-ghost).
-
-Thanks to all contributors! :D
-
-## Contributions
-
-Feel free to create issue or pull request.    
-If you need any help, you can ask questions here on **[discussions](https://github.com/Keyitdev/dotfiles/discussions/categories/q-a)** or contact me on **[discord](https://discord.com/users/908702082578665474)** / **[reddit](https://www.reddit.com/user/Keyitdev)**.
-
-Distributed under the **[GPLv3+](https://www.gnu.org/licenses/gpl-3.0.html) License**.    
-Copyright (C) 2022 Keyitdev.
+# https://catalins.tech/zsh-plugins/
+# https://commandmasters.com/commands/polybar-msg-common/#:~:text=polybar-msg%20cmd%20toggle%20Motivation%3A%20Toggling%20between%20hidden%20and,it%20is%20visible%2C%20this%20command%20will%20hide%20it.

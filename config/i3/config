@@ -41,6 +41,8 @@ bindsym $mod+x exec "~/.config/rofi/script/powermenu"
 bindsym $mod+c exec "~/.config/rofi/script/screenshot"
 bindsym $mod+z exec "~/.config/rofi/script/bluetooth"
 
+bindsym $mod+t exec polybar-msg cmd toggle
+
 # take a screenshot
 bindsym Pause exec screenshot -sa
 bindsym Print exec screenshot -sf
