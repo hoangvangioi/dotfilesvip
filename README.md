@@ -1,6 +1,4 @@
-# Dotfiles 
-
-## [Watch on Youtube](https://youtu.be/tSreyGcCMB4) <img alt="" align="right" src="https://img.shields.io/github/forks/keyitdev/dotfiles?color=bf616a&labelColor=1b1b25&style=for-the-badge"/> <img alt="" align="right" src="https://img.shields.io/github/stars/keyitdev/dotfiles?color=dd864a&labelColor=1b1b25&style=for-the-badge"/>
+# Dotfiles <img alt="" align="right" src="https://img.shields.io/github/forks/hoangvangioi/hoangvangioi.com?color=bf616a&labelColor=1b1b25&style=for-the-badge"/> <img alt="" align="right" src="https://img.shields.io/github/stars/hoangvangioi/hoangvangioi.com?color=dd864a&labelColor=1b1b25&style=for-the-badge"/>
 
 ### [Showcase](#showcase) · [Detailed info](#detailed-information) · [Troubleshooting](#troubleshooting) · [Contributions](#contributions)
 
@@ -174,3 +172,16 @@ Note: `Win` refers to the `Super/Mod` key.
 
 # https://catalins.tech/zsh-plugins/
 # https://commandmasters.com/commands/polybar-msg-common/#:~:text=polybar-msg%20cmd%20toggle%20Motivation%3A%20Toggling%20between%20hidden%20and,it%20is%20visible%2C%20this%20command%20will%20hide%20it.
+
+
+
+## Config
+
+- alacritty
+- btop
+
+- ibus
+- neofetch
+- ranger
+
+- zathura
