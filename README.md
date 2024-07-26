@@ -20,7 +20,7 @@ The **Arch Linux** & **i3-wm** dotfiles!
 ## Automatic installation
 
 ```sh
-git clone https://www.github.com/keyitdev/dotfiles.git
+git clone https://www.github.com/hoangvangioi/dotfiles.git
 cd dotfiles
 chmod +x install.sh
 ./install.sh
@@ -170,8 +170,8 @@ Note: `Win` refers to the `Super/Mod` key.
     - Open picom configuration `"$HOME"/.config/picom/picom.conf`. 
     - Change picom backend from `backend = "glx";` to `backend = "xrender";`.
 
-# https://catalins.tech/zsh-plugins/
-# https://commandmasters.com/commands/polybar-msg-common/#:~:text=polybar-msg%20cmd%20toggle%20Motivation%3A%20Toggling%20between%20hidden%20and,it%20is%20visible%2C%20this%20command%20will%20hide%20it.
+###### https://catalins.tech/zsh-plugins/
+###### https://commandmasters.com/commands/polybar-msg-common/#:~:text=polybar-msg%20cmd%20toggle%20Motivation%3A%20Toggling%20between%20hidden%20and,it%20is%20visible%2C%20this%20command%20will%20hide%20it.
 
 
 
@@ -179,9 +179,16 @@ Note: `Win` refers to the `Super/Mod` key.
 
 - alacritty
 - btop
-
+- 
+- 
+- 
 - ibus
+- 
+- 
+- 
 - neofetch
+- 
+- 
 - ranger
-
+- 
 - zathura

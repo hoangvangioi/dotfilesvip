@@ -48,7 +48,7 @@ create_default_directories() {
 
 create_backup() {
     echo -e "${green}[*] Creating backup of existing configs.${no_color}"
-    for dir in alacritty btop dunst gtk-3.0 i3 neofetch nvim polybar ranger rofi zathura; do
+    for dir in alacritty btop Code dunst gtk-3.0 i3 neofetch nvim polybar ranger rofi zathura; do
         if [ -d "$config_directory/$dir" ]; then
             mv "$config_directory/$dir" "$config_directory/${dir}_$date"
             echo "$dir configs detected, backing up."
@@ -135,8 +135,6 @@ install_vsc() {
     code --install-extension visualstudioexptteam.intellicode-api-usage-examples
     code --install-extension visualstudioexptteam.vscodeintellicode
     code --install-extension zhuangtongfa.Material-theme
-    echo -e "${green}[*] Copying vsc configs.${no_color}"
-    cp ./vsc/settings.json "$HOME"/.config/Code\ -\ OSS/User
 }
 
 install_sddm() {

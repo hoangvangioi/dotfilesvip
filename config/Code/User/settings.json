@@ -5,6 +5,7 @@
     "window.menuBarVisibility": "hidden",
     "workbench.iconTheme": "material-icon-theme",
     "vscodeGoogleTranslate.preferredLanguage": "Vietnamese",
+    "terminal.integrated.tabs.enabled": true,
     "material-icon-theme.folders.color": "#1ab3af",
     "material-icon-theme.files.color": "#bf4000",
     "material-icon-theme.folders.theme": "specific",
@@ -109,22 +110,5 @@
     },
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
-    // "material-icon-theme.files.associations": {
-    //     "*.ts": "typescript",
-    //     "**.json": "json",
-    //     "fileName.ts": "angular"
-    // }
-
-
-    // "material-icon-theme.files.associations": {
-    //     "fileName.ts": "../../icons/sample"
-    // }
-
-
-    // "material-icon-theme.folders.associations": {
-    //     "customFolderName": "src",
-    //     "sample": "dist"
-    // }
-    
+    }    
 }
