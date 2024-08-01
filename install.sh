@@ -35,7 +35,12 @@ install_pkgs() {
 
 install_aur_pkgs() {
     echo -e "${green}[*] Installing packages with yay.${no_color}"
-    yay -S --noconfirm --needed i3lock i3-resurrect ffcast dhcpcd iwd ntfs-3g ntp pulsemixer vnstat light bibata-cursor-theme-bin
+    yay -S --noconfirm --needed i3lock i3-resurrect ffcast dhcpcd iwd ntfs-3g ntp pulsemixer vnstat light upower bibata-cursor-theme-bin
+
+    # install i3lock-color
+    git clone https://github.com/Raymo111/i3lock-color.git
+    (cd i3lock-color && ./install-i3lock-color.sh)
+    rm -rf i3lock-color
 }
 
 create_default_directories() {
@@ -145,6 +150,7 @@ install_sddm() {
     echo "[Theme]
 Current=sddm-arch-theme" | sudo tee /etc/sddm.conf
 }
+# xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 finishing() {
     echo -e "${green}[*] Finalizing setup...${no_color}"

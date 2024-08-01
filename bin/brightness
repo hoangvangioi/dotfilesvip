@@ -9,13 +9,13 @@ cur_bri=$(cat /sys/class/backlight/*/brightness)
 cur_per=$((cur_bri * 100 / max_bri))
 
 if [ "$cur_per" -ge 50 ]; then
-        dunstify -a "Screen" \
+    dunstify -a "Screen" \
         "Screen" \
         "Brightness: $cur_per%" \
         -r 100 \
         -i "$dir_icons"/sun.svg
 else
-        dunstify -a "Screen" \
+    dunstify -a "Screen" \
         "Screen" \
         "Brightness: $cur_per%" \
         -r 100 \

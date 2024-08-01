@@ -6,6 +6,6 @@ sudo pacman -Scc
 paccache -r
 sudo pacman -Qtdq | sudo pacman -Rns -
 
-# list cache 
+# list cache
 sudo du -sh ~/.cache/
 rm -rf ~/.cache/*
