@@ -36,13 +36,16 @@ case $chosen in
     handle_choice "systemctl hibernate"
     ;;
 "$lock")
-    i3lock -i "$DIR/script/material-ocean.png"
+    lock
     ;;
 "$suspend")
-    handle_choice "systemctl suspend && i3lock -i $DIR/script/material-ocean.png"
+    handle_choice "systemctl suspend"
     ;;
 "$logout")
     handle_choice "i3-msg exit"
+    ;;
+*)
+    rofi -theme "$DIR/rofi/themes/askpass.rasi" -e "Invalid option"
     ;;
 esac
 
