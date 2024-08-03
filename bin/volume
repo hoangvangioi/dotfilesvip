@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 dir_icons="/usr/local/bin/icons"
 
