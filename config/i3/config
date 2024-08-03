@@ -15,15 +15,14 @@ bindsym $mod+Return exec --no-startup-id alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# Launch Polybar. Take a look at ~/.confi/polybar/config to
-# configure the bar.
+# Launch Polybar. Take a look at ~/.confi/polybar/config to configure the bar.
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Display Wallpaper, always.
 exec_always feh --no-fehbg --bg-scale $HOME/Pictures/wallpapers/dracula.png
 
-#Compositor. This helps in transparency and fading.
-exec_always --no-startup-id  picom -f
+# Compositor. This helps in transparency and fading.
+exec_always --no-startup-id picom -f
 
 # run dunst
 exec_always --no-startup-id dunst &
@@ -41,21 +40,18 @@ bindsym $mod+x exec "~/.config/rofi/script/powermenu"
 bindsym $mod+c exec "~/.config/rofi/script/screenshot"
 bindsym $mod+z exec "~/.config/rofi/script/bluetooth"
 
+# Polybar toggle between hidden/visible
 bindsym $mod+t exec polybar-msg cmd toggle
 
-# take a screenshot
-bindsym Pause exec screenshot -sa
-bindsym Print exec screenshot -sf
+# Screenshots in files
+bindsym Print exec --no-startup-id maim --format=png "$HOME/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-all.png"
+bindsym $mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) "$HOME/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-current.png"
+bindsym Shift+Print exec --no-startup-id maim --format=png --select "$HOME/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-selected.png"
 
-# ##  Screenshots in files
-# bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-all.png"
-# bindsym $mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-current.png"
-# bindsym Shift+Print exec --no-startup-id maim --format=png --select "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-selected.png"
-
-# ## Screenshots in clipboards
-# bindsym Ctrl+Print exec --no-startup-id maim --format=png | xclip -selection clipboard -t image/png
-# bindsym Ctrl+$mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-# bindsym Ctrl+Shift+Print exec --no-startup-id maim --format=png --select | xclip -selection clipboard -t image/png
+# Screenshots in clipboards
+bindsym Ctrl+Print exec --no-startup-id maim --format=png | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --format=png --select | xclip -selection clipboard -t image/png
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -65,20 +61,20 @@ bindsym Print exec screenshot -sf
 
 # The 4 lines of text above come from i3 documentation. Waking up from a suspended
 # system will launch betterlockscreen
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock
+exec --no-startup-id xss-lock --transfer-sleep-lock -- lock
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 # We use this. System dark theme is applied to it.
 exec --no-startup-id nm-applet
 
-#Volume Control
+# Volume Control
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ && volume &
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- && volume &
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && mute &
-#bindsym XF86AudioMicMute exec --no-startup-id amixer -D pulse sset Master 5%+ && volume &
+# bindsym XF86AudioMicMute exec --no-startup-id amixer -D pulse sset Master 5%+ && volume &
 
-##Brightness Control
+# Brightness Control
 exec_always --no-startup-id light -I
 bindsym XF86MonBrightnessUp exec light -A 2 && light -O && brightness &
 bindsym XF86MonBrightnessDown exec light -U 2 && light -O && brightness &
@@ -88,20 +84,18 @@ bindsym Ctrl+F7 exec brightness_hdmi down
 bindsym Ctrl+F8 exec brightness_hdmi up
 
 # turn off screen
-bindsym XF86ScreenSaver exec xset dpms force off
+# bindsym XF86ScreenSaver exec xset dpms force off
 
 # toggle microphone 
 bindsym ctrl + F3 exec amixer set Capture nocap && dunstify -a "Microphone" "Microphone" "Microphone is muted" -r 100 -i /usr/local/bin/icons/mic-off.svg
 bindsym ctrl + F4 exec amixer set Capture cap && dunstify -a "Microphone" "Microphone" "Microphone is unmuted" -r 100 -i /usr/local/bin/icons/mic.svg
 
-# toggle touchpad
-bindsym ctrl + F9 exec xinput set-prop $(xinput list | grep -oP 'Touchpad.*id=\K\d+') "Device Enabled" 0 && dunstify -a "Touchpad" "Touchpad" "Touchpad is disabled" -r 100
-bindsym ctrl + F10 exec xinput set-prop $(xinput list | grep -oP 'Touchpad.*id=\K\d+') "Device Enabled" 1 && dunstify -a "Touchpad" "Touchpad" "Touchpad is enabled" -r 100
+# Touchpad toggle /usr/local/bin/
+bindsym XF86TouchpadToggle exec --no-startup-id toggle-touchpad
 
 # Touchpad config
-# exec --no-startup-id xinput set-prop $(xinput list | grep -oP 'Touchpad.*id=\K\d+') "Synaptics ClickPad" 0
-# exec --no-startup-id xinput set-prop $(xinput list | grep -oP 'Touchpad.*id=\K\d+') "libinput Natural Scrolling Enabled" 1
-# exec --no-startup-id xinput set-prop $(xinput list | grep -oP 'Touchpad.*id=\K\d+') "libinput Disable While Typing Enabled" 0
+exec --no-startup-id xinput set-prop $(xinput list | grep -oP 'Touchpad.*id=\K\d+') "libinput Disable While Typing Enabled" 0
+exec --no-startup-id xinput set-prop $(xinput list | grep -oP 'Touchpad.*id=\K\d+') "libinput Tapping Enabled" 1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

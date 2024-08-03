@@ -1,4 +1,4 @@
-# Dotfiles <img alt="" align="right" src="https://img.shields.io/github/forks/hoangvangioi/hoangvangioi.com?color=bf616a&labelColor=1b1b25&style=for-the-badge"/> <img alt="" align="right" src="https://img.shields.io/github/stars/hoangvangioi/hoangvangioi.com?color=dd864a&labelColor=1b1b25&style=for-the-badge"/>
+# Dotfiles <img alt="" align="right" src="https://img.shields.io/github/forks/hoangvangioi/dotfiles?color=bf616a&labelColor=1b1b25&style=for-the-badge"/> <img alt="" align="right" src="https://img.shields.io/github/stars/hoangvangioi/dotfiles?color=dd864a&labelColor=1b1b25&style=for-the-badge"/>
 
 ### [Showcase](#showcase) · [Detailed info](#detailed-information) · [Troubleshooting](#troubleshooting) · [Contributions](#contributions)
 
@@ -35,7 +35,7 @@ chmod +x install.sh
 
 ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/1.png?raw=true)
 
-### vsc & ncmpcpp & cava
+### vsc & ncmpcpp & cavaz
 
 ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/2.png?raw=true)
 
@@ -180,15 +180,58 @@ Note: `Win` refers to the `Super/Mod` key.
 - alacritty
 - btop
 - 
-- 
-- 
+- gtk-3.0
+- i3
 - ibus
-- 
-- 
-- 
 - neofetch
 - 
 - 
 - ranger
 - 
 - zathura
+
+
+
+```sh
+Weather report: Hanoi
+
+   _`/"".-.     Patchy rain nearby
+    ,\_(   ).   +31(36) °C     
+     /(___(__)  ← 4 km/h       
+       ‘ ‘ ‘ ‘  10 km          
+      ‘ ‘ ‘ ‘   0.0 mm         
+                                                       ┌─────────────┐                                                       
+┌──────────────────────────────┬───────────────────────┤  Sat 03 Aug ├───────────────────────┬──────────────────────────────┐
+│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
+├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
+│  _`/"".-.     Patchy rain ne…│  _`/"".-.     Thundery outbr…│  _`/"".-.     Patchy rain ne…│    \  /       Partly Cloudy  │
+│   ,\_(   ).   +27(31) °C     │   ,\_(   ).   +33(38) °C     │   ,\_(   ).   +30(36) °C     │  _ /"".-.     +27(31) °C     │
+│    /(___(__)  ↙ 4-5 km/h     │    /(___(__)  ↖ 3 km/h       │    /(___(__)  ↖ 14-25 km/h   │    \_(   ).   ↖ 12-20 km/h   │
+│      ‘ ‘ ‘ ‘  10 km          │     ⚡‘‘⚡‘‘  9 km           │      ‘ ‘ ‘ ‘  9 km           │    /(___(__)  10 km          │
+│     ‘ ‘ ‘ ‘   0.0 mm | 78%   │     ‘ ‘ ‘ ‘   0.0 mm | 0%    │     ‘ ‘ ‘ ‘   0.6 mm | 100%  │               0.0 mm | 0%    │
+└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
+                                                       ┌─────────────┐                                                       
+┌──────────────────────────────┬───────────────────────┤  Sun 04 Aug ├───────────────────────┬──────────────────────────────┐
+│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
+├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
+│  _`/"".-.     Patchy rain ne…│  _`/"".-.     Patchy rain ne…│     \   /     Sunny          │     \   /     Clear          │
+│   ,\_(   ).   +30(35) °C     │   ,\_(   ).   +33(40) °C     │      .-.      +30(35) °C     │      .-.      +27(31) °C     │
+│    /(___(__)  ↖ 7-8 km/h     │    /(___(__)  ↖ 7-8 km/h     │   ― (   ) ―   ← 18-29 km/h   │   ― (   ) ―   ↖ 13-20 km/h   │
+│      ‘ ‘ ‘ ‘  10 km          │      ‘ ‘ ‘ ‘  10 km          │      `-’      10 km          │      `-’      10 km          │
+│     ‘ ‘ ‘ ‘   0.0 mm | 73%   │     ‘ ‘ ‘ ‘   0.0 mm | 68%   │     /   \     0.0 mm | 0%    │     /   \     0.0 mm | 0%    │
+└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
+                                                       ┌─────────────┐                                                       
+┌──────────────────────────────┬───────────────────────┤  Mon 05 Aug ├───────────────────────┬──────────────────────────────┐
+│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
+├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
+│  _`/"".-.     Patchy rain ne…│  _`/"".-.     Patchy rain ne…│  _`/"".-.     Patchy rain ne…│  _`/"".-.     Patchy rain ne…│
+│   ,\_(   ).   +30(35) °C     │   ,\_(   ).   +33(40) °C     │   ,\_(   ).   +31(38) °C     │   ,\_(   ).   +28(33) °C     │
+│    /(___(__)  ↓ 6-7 km/h     │    /(___(__)  ← 4 km/h       │    /(___(__)  ↖ 14-22 km/h   │    /(___(__)  ↖ 12-20 km/h   │
+│      ‘ ‘ ‘ ‘  10 km          │      ‘ ‘ ‘ ‘  10 km          │      ‘ ‘ ‘ ‘  10 km          │      ‘ ‘ ‘ ‘  9 km           │
+│     ‘ ‘ ‘ ‘   0.0 mm | 76%   │     ‘ ‘ ‘ ‘   0.0 mm | 61%   │     ‘ ‘ ‘ ‘   0.1 mm | 100%  │     ‘ ‘ ‘ ‘   0.5 mm | 100%  │
+└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
+Location: Hà Nội, Việt Nam [21.0292095,105.85247]
+
+Follow @igor_chubin for wttr.in updates
+
+```

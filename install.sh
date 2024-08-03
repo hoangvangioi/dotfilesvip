@@ -30,12 +30,15 @@ install_yay() {
 
 install_pkgs() {
     echo -e "${green}[*] Installing packages with pacman.${no_color}"
-    sudo pacman -S --noconfirm --needed acpi alsa-utils base-devel curl git pulseaudio pulseaudio-alsa xorg xorg-xinit alacritty btop dunst feh firefox i3-wm libnotify nemo neofetch neovim pacman-contrib picom polybar ranger rofi scrot slop xclip zathura zathura-pdf-mupdf
+    sudo pacman -S --noconfirm --needed acpi alsa-utils base-devel curl git \
+    pulseaudio pulseaudio-alsa xorg xorg-xinit alacritty btop dunst feh firefox \
+    i3-wm libnotify nemo neofetch neovim pacman-contrib picom polybar ranger rofi \
+    scrot slop xclip zathura zathura-pdf-mupdf
 }
 
 install_aur_pkgs() {
     echo -e "${green}[*] Installing packages with yay.${no_color}"
-    yay -S --noconfirm --needed i3lock i3-resurrect ffcast dhcpcd iwd ntfs-3g ntp pulsemixer vnstat light upower bibata-cursor-theme-bin
+    yay -S --noconfirm --needed i3lock i3-resurrect ffcast dhcpcd iwd ntfs-3g ntp pulsemixer vnstat light upower maim
 
     # install i3lock-color
     git clone https://github.com/Raymo111/i3lock-color.git
@@ -74,6 +77,7 @@ copy_configs() {
 copy_scripts() {
     echo -e "${green}[*] Copying scripts to $scripts_directory.${no_color}"
     sudo cp -r ./bin/* "$scripts_directory"
+    sudo chmod +x "$scripts_directory"/*
 }
 
 install_fonts() {
@@ -88,6 +92,7 @@ copy_other_configs() {
 
 install_gtk_theme() {
     echo -e "${green}[*] Installing gtk theme.${no_color}"
+    "$aurhelper" -S --noconfirm --needed reversal-icon-theme-git bibata-cursor-theme-bin
     wget -q https://github.com/EliverLara/Sweet/releases/download/v5.0/Sweet-Dark-v40.tar.xz
     tar xvf Sweet-Dark-v40.tar.xz
     sudo mkdir -p /usr/share/themes/Sweet-Dark-v40
