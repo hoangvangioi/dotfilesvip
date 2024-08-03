@@ -1,11 +1,12 @@
 return {
-	"catppuccin/nvim",
-	name = "catppuccin",
-	priority = 1000,
-	config = function()
-		require("catppuccin").setup({
-			flavour = "mocha",
-		})
-		vim.cmd([[colorscheme catppuccin]])
-	end,
+    -- add dracula
+    { "Mofiqul/dracula.nvim" },
+  
+    -- Configure LazyVim to load dracula
+    {
+        "LazyVim/LazyVim",
+        opts = {
+            colorscheme = "dracula",
+        },
+    },
 }

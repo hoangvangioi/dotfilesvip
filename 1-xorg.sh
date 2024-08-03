@@ -28,3 +28,6 @@ done
 echo
 echo "Done!"
 echo
+
+
+teams teams-for-linux-bin telegram-desktop-bin
