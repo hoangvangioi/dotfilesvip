@@ -21,7 +21,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Display Wallpaper, always.
 exec_always feh --no-fehbg --bg-scale $HOME/Pictures/wallpapers/dracula.png
 
-# Compositor. This helps in transparency and fading.
+#Compositor. This helps in transparency and fading.
 exec_always --no-startup-id picom -f
 
 # run dunst
@@ -37,21 +37,18 @@ bindsym $mod+m exec xrandr --auto --output HDMI-1 --off && i3-msg restart &
 # run rofi programs
 bindsym $mod+d exec "rofi -show drun -modi run,drun,ssh,window -scroll-method 0 -terminal alacritty -kb-cancel Escape -theme ~/.config/rofi/themes/launcher.rasi -config ~/.config/rofi/config.rasi"
 bindsym $mod+x exec "~/.config/rofi/script/powermenu"
-bindsym $mod+c exec "~/.config/rofi/script/screenshot"
+bindsym $mod+c exec "~/.config/rofi/script/recorder"
 bindsym $mod+z exec "~/.config/rofi/script/bluetooth"
+bindsym $mod+p exec "~/.config/rofi/script/calendar"
+bindsym $mod+o exec "~/.config/rofi/script/web-search"
 
 # Polybar toggle between hidden/visible
 bindsym $mod+t exec polybar-msg cmd toggle
 
-# Screenshots in files
-bindsym Print exec --no-startup-id maim --format=png "$HOME/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-all.png"
-bindsym $mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) "$HOME/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-current.png"
-bindsym Shift+Print exec --no-startup-id maim --format=png --select "$HOME/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-selected.png"
-
-# Screenshots in clipboards
-bindsym Ctrl+Print exec --no-startup-id maim --format=png | xclip -selection clipboard -t image/png
-bindsym Ctrl+$mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec --no-startup-id maim --format=png --select | xclip -selection clipboard -t image/png
+# Screenshots in files and clipboards
+bindsym Print exec --no-startup-id "screenshot all"
+bindsym $mod+Print exec --no-startup-id "screenshot window"
+bindsym Shift+Print exec --no-startup-id "screenshot select"
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
