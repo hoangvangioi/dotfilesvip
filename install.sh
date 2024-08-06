@@ -33,12 +33,15 @@ install_pkgs() {
     sudo pacman -S --noconfirm --needed acpi alsa-utils base-devel curl git \
     pulseaudio pulseaudio-alsa xorg xorg-xinit alacritty btop dunst feh firefox \
     i3-wm libnotify nemo neofetch neovim pacman-contrib picom polybar ranger rofi \
-    scrot slop xclip zathura zathura-pdf-mupdf
+    scrot slop xclip zathura zathura-pdf-mupdf bc xf86-video-intel bluez bluez-utils \
+    pulseaudio-bluetooth bluez-libs openvpn networkmanager-openvpn networkmanager \
+    network-manager-applet
 }
 
 install_aur_pkgs() {
     echo -e "${green}[*] Installing packages with yay.${no_color}"
-    yay -S --noconfirm --needed i3lock i3-resurrect ffcast dhcpcd iwd ntfs-3g ntp pulsemixer vnstat light upower maim
+    yay -S --noconfirm --needed i3lock i3-resurrect ffcast dhcpcd iwd ntfs-3g \
+    ntp pulsemixer vnstat light upower maim redshift spotify playerctl
 
     # install i3lock-color
     git clone https://github.com/Raymo111/i3lock-color.git
