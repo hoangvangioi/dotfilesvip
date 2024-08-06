@@ -180,14 +180,15 @@ Note: `Win` refers to the `Super/Mod` key.
 - alacritty
 - btop
 - 
+- dunst
 - gtk-3.0
 - i3
 - ibus
 - neofetch
 - 
-- 
+- polybar
 - ranger
-- 
+- rofi
 - zathura
 
 
