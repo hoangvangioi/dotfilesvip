@@ -14,8 +14,8 @@ NC="%{F-}" # No Color
 # Trash directory and size limits
 TRASH_DIR="$HOME/.local/share/Trash/files"
 INFO_DIR="$HOME/.local/share/Trash/info"
-ALERT_SIZE=5000000
-LIMIT_TRASH_SIZE=8000000
+ALERT_SIZE=1073741824  # 1 GB in bytes
+LIMIT_TRASH_SIZE=2147483648  # 2 GB in bytes
 
 # Function to get trash info
 get_trash_info() {
@@ -41,11 +41,11 @@ display_trash_status() {
     size_bytes=$3
 
     if [ "$size_bytes" -gt "$ALERT_SIZE" ]; then
-        echo "${RED}${TRASH_ICON} ${NC}Very Full ${CYAN}${size}${NC}"
+        echo "${RED}${TRASH_ICON}${NC} ${CYAN}${size}${NC}"
     elif [ "$trash_count" -gt 0 ]; then
-        echo "${ORANGE}${TRASH_ICON} ${NC}Full ${CYAN}${size}${NC}"
+        echo "${ORANGE}${TRASH_ICON}${NC} ${CYAN}${size}${NC}"
     else
-        echo "${GREEN}${TRASH_ICON} ${NC}Empty"
+        echo "${GREEN}${TRASH_ICON} ${NC}0"
     fi
 }
 
