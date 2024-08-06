@@ -26,27 +26,27 @@ options="$shutdown\n$reboot\n$hibernate\n$lock\n$suspend\n$logout"
 
 chosen="$(printf "%b" "$options" | $rofi_cmd -p "UP - $uptime" -dmenu -selected-row 2)"
 case $chosen in
-"$shutdown")
-    handle_choice "systemctl poweroff"
-    ;;
-"$reboot")
-    handle_choice "systemctl reboot"
-    ;;
-"$hibernate")
-    handle_choice "systemctl hibernate"
-    ;;
-"$lock")
-    lock
-    ;;
-"$suspend")
-    handle_choice "systemctl suspend"
-    ;;
-"$logout")
-    handle_choice "i3-msg exit"
-    ;;
-*)
-    rofi -theme "$DIR/rofi/themes/askpass.rasi" -e "Invalid option"
-    ;;
+    "$shutdown")
+        handle_choice "systemctl poweroff"
+        ;;
+    "$reboot")
+        handle_choice "systemctl reboot"
+        ;;
+    "$hibernate")
+        handle_choice "systemctl hibernate"
+        ;;
+    "$lock")
+        lock
+        ;;
+    "$suspend")
+        handle_choice "systemctl suspend"
+        ;;
+    "$logout")
+        handle_choice "i3-msg exit"
+        ;;
+    *)
+        exit 0
+        ;;
 esac
 
 exit 0

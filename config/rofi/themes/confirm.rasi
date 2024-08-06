@@ -125,22 +125,22 @@ element selected {
 
 element.active,
 element.selected.urgent {
-    background-color: @selected;
-    text-color: @background;
-    border-color: @selected;
+  background-color: @selected;
+  text-color: @background;
+  border-color: @selected;
 }
 
 element.selected.urgent {
-    border-color: @selector;
+  border-color: @selector;
 }
 
 element.urgent,
 element.selected.active {
-    background-color: @off;
-    text-color: @background;
-    border-color: @off;
+  background-color: @off;
+  text-color: @background;
+  border-color: @off;
 }
 
 element.selected.active {
-    border-color: @selector;
+  border-color: @selector;
 }

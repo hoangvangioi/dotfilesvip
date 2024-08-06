@@ -8,6 +8,8 @@ magenta='#ff79c6'
 blue='#6272a4'
 green='#50fa7b'
 
+dunstctl set-paused true
+
 i3lock \
     --insidever-color=$selection$alpha \
     --insidewrong-color=$selection$alpha \
@@ -48,3 +50,5 @@ i3lock \
     --layout-font="JetBrainsMono Nerd Font" \
     --verif-font="JetBrainsMono Nerd Font" \
     --wrong-font="JetBrainsMono Nerd Font"
+
+dunstctl set-paused false

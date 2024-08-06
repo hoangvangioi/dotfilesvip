@@ -3,20 +3,24 @@
 
 configuration {
     show-icons:                     false;
-    display-drun: 					"";
-    drun-display-format:            "{icon} {name}";
+    display-drun: 					":";
+    drun-display-format:            "{name}";
+    threads:                        0;
+    scroll-method:                  0;
     disable-history:                false;
-	click-to-exit: 					true;
+    fullscreen:                     false;
+	hide-scrollbar: 				true;
+	sidebar-mode: 					false;
 }
 
 window {
     transparency:                   "real";
     background-color:               @background;
     text-color:                     @foreground;
-    border:                  		1px;
-    border-color:                  	@selector;
+	border:							1px;
     border-radius:                  0px;
-    width:                          480px;
+    border-color:					@selected;
+    width:                          420px;
     location:                       center;
     anchor:                         center;
     x-offset:                       0;
@@ -25,48 +29,43 @@ window {
 
 prompt {
     enabled: 						true;
-	margin: 						0px 0px 0px 8px;
-    padding:    					6px 0px 6px 0px;
+	padding: 						4px 4px 6px 6px;
 	background-color: 				@background;
 	text-color: 					@foreground;
-    border:                  		0px 0px 0px 0px;
-    border-color:                  	@selector;
-    border-radius:                  0px;
 }
 
 textbox-prompt-colon {
 	expand: 						false;
-	str: 							"󰄀";
-    border-radius:                  0px;
-    background-color:               @selector;
-    text-color:                     @background;
-    padding:    					6px 13px 6px 10px;
-	font:							"Iosevka Nerd Font 10";
-}
-
-entry {
+	str: 							"";
     background-color:               @background;
-    text-color:                     @background;
-    placeholder-color:              @background;
-    placeholder:                    "";
-    expand:                         true;
-    horizontal-align:               0;
-    blink:                          false;
-    padding:                        6px;
+    text-color:                     @green;
+    padding:                        5px 0px 0px 4px;
+	font:							"JetBrainsMono NL Nerd Font 12";
 }
 
 inputbar {
 	children: 						[ textbox-prompt-colon, prompt ];
-    spacing:                        0;
     background-color:               @background;
     text-color:                     @foreground;
+    expand:                         false;
     border:                  		0px 0px 1px 0px;
     border-radius:                  0px;
-    border-color:                  	@selector;
-    expand:                         false;
+    border-color:                  	@selected;
     margin:                         0px 0px 0px 0px;
-    padding:                        0px;
+    padding:                        0px 0px 0px 0px;
     position:                       center;
+}
+
+
+entry {
+    background-color:               @background;
+    text-color:                     @foreground;
+    placeholder-color:              @foreground;
+    expand:                         true;
+    horizontal-align:               0;
+    placeholder:                    "Search";
+    blink:                          true;
+    padding:                        4px 0px 0px 0px;
 }
 
 case-indicator {
@@ -75,11 +74,12 @@ case-indicator {
     spacing:                        0;
 }
 
+
 listview {
     background-color:               @background;
-    columns:                        1;
-    lines:							9;
-    spacing:                        8px;
+    columns:                        9;
+    lines:							7;
+    spacing:                        5px;
     cycle:                          true;
     dynamic:                        true;
     layout:                         vertical;
@@ -88,42 +88,39 @@ listview {
 mainbox {
     background-color:               @background;
     children:                       [ inputbar, listview ];
-    spacing:                       	10px;
-    padding:                        10px;
+    spacing:                       	5px;
+    padding:                        5px 5px 5px 5px;
 }
 
 element {
     background-color:               @background;
     text-color:                     @foreground;
     orientation:                    horizontal;
-    border:                  		1px;
+	border:							0px;
     border-radius:                  0px;
-    border-color:                  	@selector;
-    padding:                        7px 20px 7px 20px;
+    border-color:					@selected;
+    padding:                        5px 5px 5px 5px;
 }
 
 element-icon {
-    background-color: 				inherit;
-    text-color:       				inherit;
-    horizontal-align:               0.5;
-    vertical-align:                 0.5;
-    size:                           0px;
+    size:                           24px;
     border:                         0px;
 }
 
 element-text {
-    background-color: 				inherit;
-    text-color:       				inherit;
-	font:							"feather 13";
-    margin:                         0px 0px 0px 0px;
+    font:							"JetBrainsMono NL Nerd Font 10";
+    expand:                         true;
+    horizontal-align:               0;
+    vertical-align:                 0;
+    margin:                         2px 0px 2px 2px;
 }
 
 element selected {
-    background-color:               @selector;
+    background-color:               @selected;
     text-color:                     @background;
     border:                  		0px;
     border-radius:                  0px;
-    border-color:                  	@selector;
+    border-color:                  	@selected;
 }
 
 element.active,
@@ -134,16 +131,21 @@ element.selected.urgent {
 }
 
 element.selected.urgent {
-    border-color: @selector;
+    border-color: @magenta;
 }
 
 element.urgent,
 element.selected.active {
-    background-color: @off;
+    background-color: @orange;
     text-color: @background;
-    border-color: @off;
+    border-color: @orange;
 }
 
 element.selected.active {
-    border-color: @selector;
+    border-color: @selected;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
 }
