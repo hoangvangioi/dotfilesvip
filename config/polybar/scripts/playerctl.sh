@@ -7,7 +7,7 @@ CHROME_ICON="%{F#FFFF00} %{F-}"
 EDGE_ICON="%{F#00FFFF} %{F-}"
 SPOTIFY_ICON="%{F#1DB954} %{F-}"
 MUSIC_ICON="%{F#FF00FF}󰌳 %{F-}"
-# 
+
 if [ "$(playerctl status 2> /dev/null)" = "Playing" ]; then
     PLAYER=$(playerctl metadata --format '{{playerName}}')
     ARTIST=$(playerctl metadata artist)
