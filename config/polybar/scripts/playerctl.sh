@@ -8,10 +8,14 @@ EDGE_ICON="%{F#00FFFF} %{F-}"
 SPOTIFY_ICON="%{F#1DB954} %{F-}"
 MUSIC_ICON="%{F#FF00FF}󰌳 %{F-}"
 
-if [ "$(playerctl status 2> /dev/null)" = "Playing" ]; then
-    PLAYER=$(playerctl metadata --format '{{playerName}}')
-    ARTIST=$(playerctl metadata artist)
-    TITLE=$(playerctl metadata title)
+# File to store the current player
+CURRENT_PLAYER_FILE="/tmp/current_player"
+
+# Function to get player info
+get_player_info() {
+    PLAYER=$1
+    ARTIST=$(playerctl -p "$PLAYER" metadata artist)
+    TITLE=$(playerctl -p "$PLAYER" metadata title)
 
     # If either artist or title length is > 20, then cut and add ellipsis
     if [ "${#ARTIST}" -ge 21 ]; then
@@ -23,21 +27,57 @@ if [ "$(playerctl status 2> /dev/null)" = "Playing" ]; then
     fi
 
     case "$PLAYER" in
-        "chromium") echo "$CHROME_ICON $ARTIST - $TITLE"
-        ;;
-        "edge") echo "$EDGE_ICON $ARTIST - $TITLE"
-        ;;
-        "vlc") echo "$VLC_ICON $ARTIST - $TITLE"
-        ;;
-        "spotify") echo "$SPOTIFY_ICON $ARTIST - $TITLE"
-        ;;
-        "firefox") echo "$FIREFOX_ICON $ARTIST - $TITLE"
-        ;;
-        "mpv") echo "$MUSIC_ICON $ARTIST - $TITLE"
-        ;;
-        *) echo "$MUSIC_ICON $ARTIST - $TITLE"
-        ;;
+        "chromium")
+            echo "$CHROME_ICON $ARTIST - $TITLE"
+            ;;
+        "edge")
+            echo "$EDGE_ICON $ARTIST - $TITLE"
+            ;;
+        "vlc")
+            echo "$VLC_ICON $ARTIST - $TITLE"
+            ;;
+        "spotify")
+            echo "$SPOTIFY_ICON $ARTIST - $TITLE"
+            ;;
+        "firefox")
+            echo "$FIREFOX_ICON $ARTIST - $TITLE"
+            ;;
+        "mpv")
+            echo "$MUSIC_ICON $ARTIST - $TITLE"
+            ;;
+        *)
+            echo "$MUSIC_ICON $ARTIST - $TITLE"
+            ;;
     esac
+}
+
+# Check players in order of priority
+if [ "$(playerctl -p spotify status 2>/dev/null)" = "Playing" ]; then
+    echo "spotify" >"$CURRENT_PLAYER_FILE"
+    get_player_info "spotify"
+elif [ "$(playerctl -p edge status 2>/dev/null)" = "Playing" ]; then
+    echo "edge" >"$CURRENT_PLAYER_FILE"
+    get_player_info "edge"
+elif [ "$(playerctl -p firefox status 2>/dev/null)" = "Playing" ]; then
+    echo "firefox" >"$CURRENT_PLAYER_FILE"
+    get_player_info "firefox"
+elif [ "$(playerctl -p mpv status 2>/dev/null)" = "Playing" ]; then
+    echo "mpv" >"$CURRENT_PLAYER_FILE"
+    get_player_info "mpv"
+elif [ "$(playerctl -p vlc status 2>/dev/null)" = "Playing" ]; then
+    echo "vlc" >"$CURRENT_PLAYER_FILE"
+    get_player_info "vlc"
+elif [ "$(playerctl -p chromium status 2>/dev/null)" = "Playing" ]; then
+    echo "chromium" >"$CURRENT_PLAYER_FILE"
+    get_player_info "chromium"
 else
     echo "Player is not running"
+fi
+
+# Handle click event to pause the current player
+if [ "$1" = "pause" ]; then
+    if [ -f "$CURRENT_PLAYER_FILE" ]; then
+        CURRENT_PLAYER=$(cat "$CURRENT_PLAYER_FILE")
+        playerctl -p "$CURRENT_PLAYER" play-pause
+    fi
 fi
