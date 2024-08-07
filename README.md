@@ -179,7 +179,7 @@ Note: `Win` refers to the `Super/Mod` key.
 
 - alacritty
 - btop
-- 
+- Code
 - dunst
 - gtk-3.0
 - i3
