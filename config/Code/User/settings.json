@@ -1,114 +1,15 @@
 {
     "editor.fontFamily": "'JetBrainsMono Nerd Font', 'monospace', monospace",
     "editor.fontSize": 15,
-    "workbench.colorTheme": "Dracula",
+    "workbench.colorTheme": "Dracula Theme",
     "window.menuBarVisibility": "hidden",
     "workbench.iconTheme": "material-icon-theme",
     "vscodeGoogleTranslate.preferredLanguage": "Vietnamese",
     "terminal.integrated.tabs.enabled": true,
     "material-icon-theme.folders.color": "#1ab3af",
-    "material-icon-theme.files.color": "#bf4000",
+    "material-icon-theme.files.color": "#bf40f0",
     "material-icon-theme.folders.theme": "specific",
     "material-icon-theme.opacity": 1,
     "material-icon-theme.saturation": 1,
-    "[dart]": {
-        "editor.formatOnSave": true,
-        "editor.formatOnType": true,
-        "editor.selectionHighlight": false,
-        "editor.suggestSelection": "first",
-        "editor.tabCompletion": "on",
-        "editor.wordBasedSuggestions": "off",
-        "editor.tabSize": 4
-    },
-    "dart.lineLength": 120,
-    "dart.hotReloadOnSave": "all",
-    "dart.flutterHotReloadOnSave": "all",
-    "cmake.configureOnOpen": false,
-    "svg.preview.transparencyGrid": false,
-    "svg.preview.boundingBox": false,
-    "[markdown]": {
-        "editor.autoIndent": "advanced",
-        "editor.bracketPairColorization.enabled": true,
-        "editor.tabSize": 4,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "vhdl.formatter.insertFinalNewline": true,
-    "vhdl.formatter.replaceByAliases": true,
-    "vhdl.formatter.align.mode": "Global",
-    "vhdl.formatter.align.all": true,
-    "vhdl.formatter.align.port": true,
-    "vhdl.formatter.align.function": true,
-    "vhdl.formatter.align.procedure": true,
-    "vhdl.formatter.align.generic": true,
-    "vhdl.formatter.case.keyword": "LowerCase",
-    "vhdl.formatter.case.typename": "LowerCase",
-    "vhdl.formatter.newline.port": "NoNewLine",
-    "vhdl.formatter.newline.then": "NewLine",
-    "vhdl.formatter.newline.semicolon": "NewLine",
-    "vhdl.formatter.newline.else": "NewLine",
-    "vhdl.formatter.newline.generic": "NoNewLine",
-    "[vhdl]": {
-        "editor.formatOnSave": true,
-        "editor.tabSize": 4,
-        "breadcrumbs.showArrays": true,
-        "editor.defaultFormatter": "Vinrobot.vhdl-formatter"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "[css]": {
-        "editor.defaultFormatter": "vscode.css-language-features"
-    },
-    "[cpp]": {
-        "editor.defaultFormatter": "ms-vscode.cpptools"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[nqc]": {
-        "editor.tabSize": 4,
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "ms-vscode.cpptools"
-    },
-    "redhat.telemetry.enabled": true,
-    "workbench.activityBar.location": "hidden",
-    "tabnine.experimentalAutoImports": true,
-    "[c]": {
-        "editor.defaultFormatter": "xaver.clang-format",
-        "editor.formatOnSave": true,
-        "editor.autoIndent": "full",
-        "editor.tabSize": 4,
-        "editor.tabCompletion": "on",
-        "breadcrumbs.showArrays": true,
-        "editor.wordBasedSuggestions": "allDocuments",
-        "editor.suggestSelection": "first",
-        "editor.bracketPairColorization.enabled": true,
-        "editor.formatOnType": true,
-        "editor.selectionHighlight": false,
-        "editor.suggestOnTriggerCharacters": true,
-        "editor.formatOnPaste": true,
-        "editor.indentSize": "tabSize"
-    },
-    "clang-format.executable": "clang-format",
-    "[vue]": {
-        "editor.defaultFormatter": "Vue.volar"
-    },
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[c][dart]": {
-        "editor.wordBasedSuggestions": "off"
-    },
-    "[python]":{
-        
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }    
+    "workbench.activityBar.location": "hidden"
 }
