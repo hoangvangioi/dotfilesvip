@@ -23,30 +23,30 @@ get_player_info() {
     fi
 
     if [ "${#TITLE}" -ge 21 ]; then
-        TITLE="$(printf '%s' "$TITLE" | cut -c 1-20)..."
+        TITLE="$(printf '%s' "$TITLE" | cut -c 1-30)..."
     fi
 
     case "$PLAYER" in
         "chromium")
-            echo "$CHROME_ICON $ARTIST - $TITLE"
+            echo "$CHROME_ICON $TITLE - $ARTIST"
             ;;
         "edge")
-            echo "$EDGE_ICON $ARTIST - $TITLE"
+            echo "$EDGE_ICON $TITLE - $ARTIST"
             ;;
         "vlc")
-            echo "$VLC_ICON $ARTIST - $TITLE"
+            echo "$VLC_ICON $TITLE - $ARTIST"
             ;;
         "spotify")
-            echo "$SPOTIFY_ICON $ARTIST - $TITLE"
+            echo "$SPOTIFY_ICON $TITLE - $ARTIST"
             ;;
         "firefox")
-            echo "$FIREFOX_ICON $ARTIST - $TITLE"
+            echo "$FIREFOX_ICON $TITLE - $ARTIST"
             ;;
         "mpv")
-            echo "$MUSIC_ICON $ARTIST - $TITLE"
+            echo "$MUSIC_ICON $TITLE - $ARTIST"
             ;;
         *)
-            echo "$MUSIC_ICON $ARTIST - $TITLE"
+            echo "$MUSIC_ICON $TITLE - $ARTIST"
             ;;
     esac
 }
@@ -71,7 +71,7 @@ elif [ "$(playerctl -p chromium status 2>/dev/null)" = "Playing" ]; then
     echo "chromium" >"$CURRENT_PLAYER_FILE"
     get_player_info "chromium"
 else
-    echo "Player is not running"
+    echo "%{F#FFAA33}󰝛 %{F-}Player is not running"
 fi
 
 # Handle click event to pause the current player
