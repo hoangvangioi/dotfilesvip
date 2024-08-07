@@ -14,4 +14,10 @@ return {
             vim.fn["mkdp#util#install"]()
         end,
     },
+    -- mdx
+    {
+        "davidmh/mdx.nvim",
+        config = true,
+        dependencies = {"nvim-treesitter/nvim-treesitter"}
+    }
 }

@@ -1,11 +1,10 @@
 return {
-
     -- snippets
     {
         "L3MON4D3/LuaSnip",
         event = "InsertEnter",
-        build = (not jit.os:find("Windows"))
-            and "echo -e 'NOTE: jsregexp is optional, so not a big deal if it fails to build\n'; make install_jsregexp"
+        build = (not LazyVim.is_win())
+            and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp"
             or nil,
         opts = {
             history = true,
@@ -27,7 +26,7 @@ return {
         },
         config = function()
             require("luasnip.loaders.from_snipmate").lazy_load()
-        end
+        end,
     },
 
     -- auto completion
@@ -41,8 +40,11 @@ return {
             "hrsh7th/cmp-path",
             "saadparwaiz1/cmp_luasnip",
         },
-        opts = function()
+        opts = function(_, opts)
             local cmp = require("cmp")
+
+            table.insert(opts.sorting.comparators, 1, require("clangd_extensions.cmp_scores"))
+
             return {
                 completion = {
                     completeopt = "menu,menuone,noinsert",
@@ -72,11 +74,23 @@ return {
                     { name = "path" },
                 }),
                 formatting = {
-                    format = function(_, item)
-                        local icons = require("config.icons").icons.kinds
+                    format = function(entry, item)
+                        local icons = LazyVim.config.icons.kinds
                         if icons[item.kind] then
                             item.kind = icons[item.kind] .. item.kind
                         end
+
+                        local widths = {
+                            abbr = vim.g.cmp_widths and vim.g.cmp_widths.abbr or 40,
+                            menu = vim.g.cmp_widths and vim.g.cmp_widths.menu or 30,
+                        }
+
+                        for key, width in pairs(widths) do
+                            if item[key] and vim.fn.strdisplaywidth(item[key]) > width then
+                                item[key] = vim.fn.strcharpart(item[key], 0, width - 1) .. "…"
+                            end
+                        end
+
                         return item
                     end,
                 },
@@ -107,8 +121,7 @@ return {
     {
         "tpope/vim-surround",
         event = "VeryLazy",
-        config = function()
-        end,
+        config = function() end,
     },
 
     -- Annotations generator
@@ -138,14 +151,14 @@ return {
     -- 6. press "q" or "Q" to skip and remove current and get next/previous occurrence
     -- 7. start insert mode with i,a,I,A
     {
-        'mg979/vim-visual-multi',
-        event = "VeryLazy"
+        "mg979/vim-visual-multi",
+        event = "VeryLazy",
     },
 
     -- enhance dot(.)
     {
         "tpope/vim-repeat",
-        event = "VeryLazy"
+        event = "VeryLazy",
     },
 
     -- auto remove highlight serach
@@ -154,7 +167,6 @@ return {
         event = "VeryLazy",
         config = function()
             require("auto-hlsearch").setup()
-        end
+        end,
     },
-
 }

@@ -2,9 +2,6 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 local opt = vim.opt
 
 opt.encoding = "utf-8"
@@ -55,11 +52,7 @@ opt.guicursor = ""                 -- user fat cursor in the insert mode
 opt.timeoutlen = 300
 opt.wildmode = "longest:full,full" -- Command-line completion mode
 opt.winminwidth = 5                -- Minimum window width
-
-if vim.fn.has("nvim-0.9.0") == 1 then
-    opt.splitkeep = "screen"
-    opt.shortmess:append({ C = true })
-end
+opt.splitkeep = "screen"
 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
