@@ -6,22 +6,17 @@ Welcome to the ultimate Arch Linux setup with i3-wm. This guide will help you in
 
 ## System Configuration
 
-| **Component**            | **Details**                                           |
-|--------------------------|-------------------------------------------------------|
+| **Component**            | **Details**                                          |
+|--------------------------|------------------------------------------------------|
 | **Operating System**     | [Arch Linux](https://archlinux.org)                  |
 | **Window Manager**       | [i3-wm](https://i3wm.org)                            |
 | **Terminal Emulator**    | [Alacritty](https://github.com/alacritty/alacritty)  |
 | **Status Bar**           | [Polybar](https://github.com/polybar/polybar)        |
 | **Shell**                | [Zsh](https://www.zsh.org/)                          |
-| **Compositor**           | [Picom](https://github.com/yshui/picom)              |
-| **Application Launcher** | [Rofi](https://github.com/davatorium/rofi)          |
+| **Application Launcher** | [Rofi](https://github.com/davatorium/rofi)           |
 | **Notification Daemon**  | [Dunst](https://github.com/dunst-project/dunst)      |
-
-| **Notification Daemon**  | [Neovim](https://neovim.io)      |
-| **Notification Daemon**  | [Dunst](https://github.com/dunst-project/dunst)      |
-| **Notification Daemon**  | [Dunst](https://github.com/dunst-project/dunst)      |
-| **Notification Daemon**  | [Dunst](https://github.com/dunst-project/dunst)      |
-| **Notification Daemon**  | [Dunst](https://github.com/dunst-project/dunst)      |
+| **Text Editor**          | [Neovim](https://neovim.io)                          |
+| **Display Manager**      | [SDDM](https://github.com/sddm/sddm)                 |
 
 ---
 
