@@ -1,238 +1,145 @@
-# Dotfiles <img alt="" align="right" src="https://img.shields.io/github/forks/hoangvangioi/dotfiles?color=bf616a&labelColor=1b1b25&style=for-the-badge"/> <img alt="" align="right" src="https://img.shields.io/github/stars/hoangvangioi/dotfiles?color=dd864a&labelColor=1b1b25&style=for-the-badge"/>
+Certainly! I've polished and reorganized your dotfiles guide for clarity and consistency. Here's a revised version:
 
-### [Showcase](#showcase) · [Detailed info](#detailed-information) · [Troubleshooting](#troubleshooting) · [Contributions](#contributions)
+---
 
-The **Arch Linux** & **i3-wm** dotfiles! 
+# Dotfiles for Arch Linux & i3-wm
 
-## Information
+Welcome to the ultimate Arch Linux setup with i3-wm. This guide will help you install, configure, and customize your environment.
 
-<img src="https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/1.png?raw=true" alt="Rice Showcase" align="right" width="400px">
+---
 
-- **OS:** [Arch Linux](https://archlinux.org)
-- **WM:** [i3-wm](https://i3wm.org)
-- **Terminal:** [alacritty](https://github.com/alacritty/alacritty)
-- **Bar:** [polybar](https://github.com/polybar/polybar)
-- **Shell:** [zsh](https://www.zsh.org/)
-- **Compositor:** [picom](https://github.com/yshui/picom)
-- **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
-- **Notification Deamon:** [dunst](https://github.com/dunst-project/dunst)
+## System Configuration
 
-## Automatic installation
+| **Component**            | **Details**                                           |
+|--------------------------|-------------------------------------------------------|
+| **Operating System**     | [Arch Linux](https://archlinux.org)                  |
+| **Window Manager**       | [i3-wm](https://i3wm.org)                            |
+| **Terminal Emulator**    | [alacritty](https://github.com/alacritty/alacritty)  |
+| **Status Bar**           | [polybar](https://github.com/polybar/polybar)        |
+| **Shell**                | [zsh](https://www.zsh.org/)                          |
+| **Compositor**           | [picom](https://github.com/yshui/picom)              |
+| **Application Launcher** | [rofi](https://github.com/davatorium/rofi)          |
+| **Notification Daemon**  | [dunst](https://github.com/dunst-project/dunst)      |
 
-```sh
-git clone https://www.github.com/hoangvangioi/dotfiles.git
-cd dotfiles
-chmod +x install.sh
-./install.sh
-```
-> Warning: Remember to always read the scripts you run from the internet first.
-
-> Note: Last time I tested the installation script on 31 July 2023, Everything worked fine.
+---
 
 ## Showcase
 
-### neofetch 
+**See the environment in action:**
 
-![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/1.png?raw=true)
+| **Feature**                  | **Screenshot**                                        |
+|------------------------------|-------------------------------------------------------|
+| **neofetch**                 | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/1.png?raw=true) |
+| **vsc, ncmpcpp, & cavaz**    | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/2.png?raw=true) |
+| **rofi & dunst**             | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/3.png?raw=true) |
+| **nemo, nvim, & ranger**     | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/4.png?raw=true) |
+| **i3lock-color**             | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/5.png?raw=true) |
+| **sddm**                     | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/6.png?raw=true) |
 
-### vsc & ncmpcpp & cavaz
+---
 
-![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/2.png?raw=true)
+## Quick Start Guide
 
-### rofi & dunst
+### 1. Clone the Repository
 
-![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/3.png?raw=true)
+```sh
+git clone https://github.com/hoangvangioi/dotfiles.git
+cd dotfiles
+```
 
-<details>
-<summary><h3>More screenshots</h3></summary>
+### 2. Prepare the Installation Script
 
-### nemo & nvim & ranger
+```sh
+chmod +x install.sh
+```
 
-![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/4.png?raw=true)
+### 3. Run the Installation Script
 
-### i3lock-color
+```sh
+./install.sh
+```
 
-![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/5.png?raw=true)
+### 4. Install `curl` if Needed
 
-### sddm
+```sh
+sudo pacman -S curl
+```
 
-![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/6.png?raw=true)
+### 5. Optional: Run Additional Install Script
 
-</details>
-    
-## Detailed information
+```sh
+curl -LsS https://raw.githubusercontent.com/hoangvangioi/dotfilesvip/main/install.sh | bash
+```
 
-### Dependencies
+---
 
-**Base:** acpi alsa-utils base-devel curl git pulseaudio pulseaudio-alsa xorg xorg-xinit 
+## Keybinds
 
-**Required:** alacritty btop code dunst feh ffcast firefox i3-gaps i3lock-color i3-resurrect libnotify light mpc mpd ncmpcpp nemo neofetch neovim oh-my-zsh-git pacman-contrib papirus-icon-theme picom polybar ranger rofi scrot slop xclip zathura zathura-pdf-mupdf zsh
+Below are the basic keybindings. For more keybinds, refer to the [i3](./config/i3/config) configuration file.
 
-**Sddm:** qt5-graphicaleffects qt5-quickcontrols2 qt5-svg sddm
-
-**Emoji:** fonts: noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
-
-### Used programs
-
-- **Music Player:** [mpd](https://github.com/MusicPlayerDaemon/MPD) & [ncmpcpp](https://github.com/ncmpcpp/ncmpcpp)
-- **Editor:** [neovim](https://github.com/neovim/neovim) / [vscode](https://github.com/microsoft/vscode)
-- **Lockscreen:** [i3lock-color](https://github.com/Raymo111/i3lock-color)
-- **Display Manager:** [sddm](https://github.com/sddm/sddm)
-- **File manager:** [ranger](https://github.com/ranger/ranger) / [nemo](https://github.com/linuxmint/nemo)
-- **Pdf reader:** [zathura](https://github.com/pwmt/zathura)
-- **Monitor of Resources:** [btop](https://github.com/aristocratos/btop)
-
-### Used themes
-
-- **Shell Framework:** [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh)
-- **Vscode Theme:** [One dark pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme)
-- **Neovim Theme:** [AstroNvim](https://github.com/kabinspace/AstroVim)
-- **Icons:** [Papirus dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
-- **GTK Theme:** [Rose Pine](https://github.com/Fausto-Korpsvart/Rose-Pine-GTK-Theme)
-- **Display Manager Theme:** [Sddm-flower-theme](https://github.com/keyitdev/sddm-flower-theme)
-	
-### Fonts
-	
-- **Icons:** [Feather](https://github.com/AT-UI/feather-font/blob/master/src/fonts/feather.ttf)
-- **Interface Font:** [Open sans](https://fonts.google.com/specimen/Open+Sans#standard-styles)
-- **Monospace Font:** [Roboto mono](https://fonts.google.com/specimen/Roboto+Mono#standard-styles)
-- **Polybar Font:** [Iosevka nerd font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Iosevka)
-  
-### Keybinds
-
-These are the basic keybinds. Read through the [i3](./config/i3/config) config for more keybinds.
-
-Note: `Win` refers to the `Super/Mod` key.
+*Note: `Win` refers to the `Super/Mod` key.*
 
 |        Keybind         |                 Function                 |
-| ---------------------- | ---------------------------------------- |
+|-----------------------|------------------------------------------|
 | `Win + Enter`          | Launch terminal (alacritty)              |
 | `Win + Shift + Q`      | Close window                             |
-| `Win + Q`              | Stacking layout                          |
-| `Win + W`              | Tabbed layout                            |
-| `Win + E`              | Default layout                           |
-| `Win + R`              | Resize mode                              |
+| `Win + Q`              | Switch to stacking layout                |
+| `Win + W`              | Switch to tabbed layout                  |
+| `Win + E`              | Switch to default layout                 |
+| `Win + R`              | Enter resize mode                        |
 | `Win + T`              | Restore layout                           |
 | `Win + Y`              | Save layout                              |
-| `Win + A`              | Rofi open windows menu                   |
-| `Win + S`              | Rofi full menu                           |
-| `Win + D`              | Rofi menu                                |
-| `Win + Z`              | Rofi bookmarks                           |
-| `Win + X`              | Rofi powermenu                           |
-| `Win + C`              | Rofi screenshot script                   |
-| `Win + G`              | Gaps settings                            |
+| `Win + A`              | Open rofi window menu                    |
+| `Win + S`              | Open rofi full menu                      |
+| `Win + D`              | Open rofi menu                           |
+| `Win + Z`              | Open rofi bookmarks                      |
+| `Win + X`              | Open rofi power menu                     |
+| `Win + C`              | Run rofi screenshot script               |
+| `Win + G`              | Adjust gaps settings                     |
 | `Win + V`              | Set vertical orientation                 |
 | `Win + H`              | Set horizontal orientation               |
 | `Win + I`              | Lock screen                              |
 | `Win + O`              | Show polybar                             |
 | `Win + P`              | Hide polybar                             |
 | `Win + B`              | Move workspace to another monitor        |
-| `Win + N`              | Dual monitor mode                        |
-| `Win + M`              | Single monitor mode                      |
-| `Win + arrows (jkl;)`  | Resizing, moving windows                 |
+| `Win + N`              | Enable dual monitor mode                 |
+| `Win + M`              | Enable single monitor mode               |
+| `Win + arrows (jkl;)`  | Resize or move windows                   |
 | `Win + Shift + E`      | Exit i3                                  |
 | `Win + Shift + R`      | Restart i3                               |
 
-### Colors
+---
 
-|        Color           | Hex code |PNG |        Color           | Hex code |PNG|
-| ---------------------- | -------- |- | ---------------------- | -------- |-|
-|  background            | #1b1b25  |![#1b1b25](https://placehold.co/15x15/1b1b25/1b1b25.png) |  red                   | #cb5760  |![#cb5760](https://placehold.co/15x15/cb5760/cb5760.png)|
-|  background 2          | #282A36  |![#282A36](https://placehold.co/15x15/282A36/282A36.png) |  green                 | #999f63  |![#999f63](https://placehold.co/15x15/999f63/999f63.png)|
-|  background 3          | #16161e  |![#16161e](https://placehold.co/15x15/16161e/16161e.png) |  yellow                | #d4a067  |![#d4a067](https://placehold.co/15x15/d4a067/d4a067.png)|
-|  border                | #343746  |![#343746](https://placehold.co/15x15/343746/343746.png) |  blue                  | #6c90a8  |![#6c90a8](https://placehold.co/15x15/6c90a8/6c90a8.png)|
-|  foreground            | #dedede  |![#dedede](https://placehold.co/15x15/dedede/dedede.png) |  purple                | #776690  |![#776690](https://placehold.co/15x15/776690/776690.png)|
-|  white                 | #eeffff  |![#eeffff](https://placehold.co/15x15/eeffff/eeffff.png) |  cyan                  | #528a9b  |![#528a9b](https://placehold.co/15x15/528a9b/528a9b.png)|
-|  gray                  | #727480  |![#727480](https://placehold.co/15x15/727480/727480.png) |   pink                  | #ffa8c5  |![#ffa8c5](https://placehold.co/15x15/ffa8c5/ffa8c5.png)|
-|  black                 | #15121c  |![#15121c](https://placehold.co/15x15/15121c/15121c.png) |  orange                | #c87c3e  |![#c87c3e](https://placehold.co/15x15/c87c3e/c87c3e.png)|
+## Dependencies
 
-## Troubleshooting
+Ensure the following packages are installed:
 
-1. Some polybar modules are not working?
+| **Package** | **Purpose**                           |
+|-------------|---------------------------------------|
+| `git`       | For cloning the repository            |
+| `curl`      | For fetching additional scripts       |
+| `sudo`      | For executing commands with admin rights |
 
-    - Try changing the variables. 
-    - Open the polybar configuration `"$HOME"/.config/polybar/config.ini`. 
-    - Found `; Change it for yourself` line. 
-    - Follow the commands that are written below the `; Change it for yourself` line.
-
-2. MPD not working?
-    
-    - Check if any other program is using port 6600 (http://127.0.0.1:6600/).
-
-3. Everything is lagging? Screen is tearing?
-
-    - Edit picom config.
-    - This can be hard to solve, because if picom does not work, the whole screen may be frozen or even dark. So first try to kill the picom process.
-    - (Blindly) click `Win+Enter`.
-    - (Blindly) type `killall picom`.
-    - (Blindly) press `Enter`.
-    - (Blindly) click `Win+Shift+R`.
-    - Open picom configuration `"$HOME"/.config/picom/picom.conf`. 
-    - Change picom backend from `backend = "glx";` to `backend = "xrender";`.
-
-###### https://catalins.tech/zsh-plugins/
-###### https://commandmasters.com/commands/polybar-msg-common/#:~:text=polybar-msg%20cmd%20toggle%20Motivation%3A%20Toggling%20between%20hidden%20and,it%20is%20visible%2C%20this%20command%20will%20hide%20it.
-
-
-
-## Config
-
-- alacritty
-- btop
-- Code
-- dunst
-- gtk-3.0
-- i3
-- ibus
-- neofetch
-- 
-- polybar
-- ranger
-- rofi
-- zathura
-
-
+Install them using:
 
 ```sh
-Weather report: Hanoi
-
-   _`/"".-.     Patchy rain nearby
-    ,\_(   ).   +31(36) °C     
-     /(___(__)  ← 4 km/h       
-       ‘ ‘ ‘ ‘  10 km          
-      ‘ ‘ ‘ ‘   0.0 mm         
-                                                       ┌─────────────┐                                                       
-┌──────────────────────────────┬───────────────────────┤  Sat 03 Aug ├───────────────────────┬──────────────────────────────┐
-│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
-├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
-│  _`/"".-.     Patchy rain ne…│  _`/"".-.     Thundery outbr…│  _`/"".-.     Patchy rain ne…│    \  /       Partly Cloudy  │
-│   ,\_(   ).   +27(31) °C     │   ,\_(   ).   +33(38) °C     │   ,\_(   ).   +30(36) °C     │  _ /"".-.     +27(31) °C     │
-│    /(___(__)  ↙ 4-5 km/h     │    /(___(__)  ↖ 3 km/h       │    /(___(__)  ↖ 14-25 km/h   │    \_(   ).   ↖ 12-20 km/h   │
-│      ‘ ‘ ‘ ‘  10 km          │     ⚡‘‘⚡‘‘  9 km           │      ‘ ‘ ‘ ‘  9 km           │    /(___(__)  10 km          │
-│     ‘ ‘ ‘ ‘   0.0 mm | 78%   │     ‘ ‘ ‘ ‘   0.0 mm | 0%    │     ‘ ‘ ‘ ‘   0.6 mm | 100%  │               0.0 mm | 0%    │
-└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
-                                                       ┌─────────────┐                                                       
-┌──────────────────────────────┬───────────────────────┤  Sun 04 Aug ├───────────────────────┬──────────────────────────────┐
-│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
-├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
-│  _`/"".-.     Patchy rain ne…│  _`/"".-.     Patchy rain ne…│     \   /     Sunny          │     \   /     Clear          │
-│   ,\_(   ).   +30(35) °C     │   ,\_(   ).   +33(40) °C     │      .-.      +30(35) °C     │      .-.      +27(31) °C     │
-│    /(___(__)  ↖ 7-8 km/h     │    /(___(__)  ↖ 7-8 km/h     │   ― (   ) ―   ← 18-29 km/h   │   ― (   ) ―   ↖ 13-20 km/h   │
-│      ‘ ‘ ‘ ‘  10 km          │      ‘ ‘ ‘ ‘  10 km          │      `-’      10 km          │      `-’      10 km          │
-│     ‘ ‘ ‘ ‘   0.0 mm | 73%   │     ‘ ‘ ‘ ‘   0.0 mm | 68%   │     /   \     0.0 mm | 0%    │     /   \     0.0 mm | 0%    │
-└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
-                                                       ┌─────────────┐                                                       
-┌──────────────────────────────┬───────────────────────┤  Mon 05 Aug ├───────────────────────┬──────────────────────────────┐
-│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
-├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
-│  _`/"".-.     Patchy rain ne…│  _`/"".-.     Patchy rain ne…│  _`/"".-.     Patchy rain ne…│  _`/"".-.     Patchy rain ne…│
-│   ,\_(   ).   +30(35) °C     │   ,\_(   ).   +33(40) °C     │   ,\_(   ).   +31(38) °C     │   ,\_(   ).   +28(33) °C     │
-│    /(___(__)  ↓ 6-7 km/h     │    /(___(__)  ← 4 km/h       │    /(___(__)  ↖ 14-22 km/h   │    /(___(__)  ↖ 12-20 km/h   │
-│      ‘ ‘ ‘ ‘  10 km          │      ‘ ‘ ‘ ‘  10 km          │      ‘ ‘ ‘ ‘  10 km          │      ‘ ‘ ‘ ‘  9 km           │
-│     ‘ ‘ ‘ ‘   0.0 mm | 76%   │     ‘ ‘ ‘ ‘   0.0 mm | 61%   │     ‘ ‘ ‘ ‘   0.1 mm | 100%  │     ‘ ‘ ‘ ‘   0.5 mm | 100%  │
-└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
-Location: Hà Nội, Việt Nam [21.0292095,105.85247]
-
-Follow @igor_chubin for wttr.in updates
-
+sudo pacman -S git curl sudo
 ```
+
+---
+
+## Contributing
+
+We welcome contributions! If you have suggestions or improvements, please submit issues or pull requests.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+Thank you for using and contributing to this dotfiles setup!
+
+---
