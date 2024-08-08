@@ -66,5 +66,5 @@ return {
 				wk.register(opts.defaults)
 			end
 		end,
-	}
+	},
 }
