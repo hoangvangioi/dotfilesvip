@@ -28,15 +28,15 @@ Welcome to the ultimate Arch Linux setup with i3-wm. This guide will help you in
 
 | **Feature**       | **Screenshot**                                                    |
 |-------------------|-------------------------------------------------------------------|
-| **btop**          | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/1.png?raw=true) |
-| **vscode**        | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/1.png?raw=true) |
-| **dunst**         | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/3.png?raw=true) |
-| **neofetch**      | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/1.png?raw=true) |
-| **nemo**          | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/1.png?raw=true) |
-| **nvim**          | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/4.png?raw=true) |
-| **rofi**          | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/1.png?raw=true) |
-| **i3lock-color**  | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/5.png?raw=true) |
-| **sddm**          | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/6.png?raw=true) |
+| **btop**          | ![](https://arch.hoangvangioi.com/btop.png)           |
+| **vscode**        | ![](https://arch.hoangvangioi.com/vscode.png)         |
+| **dunst**         | ![](https://arch.hoangvangioi.com/dunst.png)          |
+| **neofetch**      | ![](https://arch.hoangvangioi.com/neofetch.png)       |
+| **nemo**          | ![](https://arch.hoangvangioi.com/nemo.png)           |
+| **nvim**          | ![](https://arch.hoangvangioi.com/nvim.png)           |
+| **rofi**          | ![](https://arch.hoangvangioi.com/rofi.png)           |
+| **i3lock-color**  | ![](https://arch.hoangvangioi.com/i3lock-color.png)   |
+| **sddm**          | ![](https://arch.hoangvangioi.com/sddm.png)           |
 
 ---
 
