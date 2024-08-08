@@ -6,17 +6,21 @@ Welcome to the ultimate Arch Linux setup with i3-wm. This guide will help you in
 
 ## System Configuration
 
-| **Component**            | **Details**                                          |
-|--------------------------|------------------------------------------------------|
-| **Operating System**     | [Arch Linux](https://archlinux.org)                  |
-| **Window Manager**       | [i3-wm](https://i3wm.org)                            |
-| **Terminal Emulator**    | [Alacritty](https://github.com/alacritty/alacritty)  |
-| **Status Bar**           | [Polybar](https://github.com/polybar/polybar)        |
-| **Shell**                | [Zsh](https://www.zsh.org/)                          |
-| **Application Launcher** | [Rofi](https://github.com/davatorium/rofi)           |
-| **Notification Daemon**  | [Dunst](https://github.com/dunst-project/dunst)      |
-| **Text Editor**          | [Neovim](https://neovim.io)                          |
-| **Display Manager**      | [SDDM](https://github.com/sddm/sddm)                 |
+| **Component**            | **Details**                                           |
+|--------------------------|-------------------------------------------------------|
+| **Operating System**     | [Arch Linux](https://archlinux.org)                   |
+| **Window Manager**       | [i3-wm](https://i3wm.org)                             |
+| **Terminal Emulator**    | [Alacritty](https://github.com/alacritty/alacritty)   |
+| **Status Bar**           | [Polybar](https://github.com/polybar/polybar)         |
+| **Shell**                | [Zsh](https://www.zsh.org/)                           |
+| **Application Launcher** | [Rofi](https://github.com/davatorium/rofi)            |
+| **Notification Daemon**  | [Dunst](https://github.com/dunst-project/dunst)       |
+| **Text Editor**          | [Neovim](https://neovim.io)                           |
+| **Display Manager**      | [SDDM](https://github.com/sddm/sddm)                  |
+| **Code Editor**          | [Visual Studio Code](https://code.visualstudio.com/)  |
+| **Input Method**         | [IBus](https://github.com/ibus/ibus)                  |
+| **System Info**          | [Neofetch](https://github.com/dylanaraps/neofetch)    |
+| **System Monitor**       | [btop](https://github.com/aristocratos/btop)          |
 
 ---
 
