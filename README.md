@@ -1,7 +1,3 @@
-Certainly! I've polished and reorganized your dotfiles guide for clarity and consistency. Here's a revised version:
-
----
-
 # Dotfiles for Arch Linux & i3-wm
 
 Welcome to the ultimate Arch Linux setup with i3-wm. This guide will help you install, configure, and customize your environment.
@@ -38,17 +34,7 @@ Welcome to the ultimate Arch Linux setup with i3-wm. This guide will help you in
 
 ---
 
-I see, you want a concise note within the guide itself, not detailed installation instructions. Here’s how to succinctly incorporate this information into the `Quick Start Guide`:
-
----
-
 ## How to Install
-
-Great! Here’s the updated guide with the new names for the installation methods:
-
----
-
-## Installation Instructions
 
 You can choose one of the following methods to install:
 
@@ -73,7 +59,7 @@ You can choose one of the following methods to install:
     ./install.sh
     ```
 
-**Note:** This method requires `git`. If `git` is not installed, you can install it using `sudo pacman -S git`.
+    > **Note:** This method requires `git`. If `git` is not installed, you can install it using `sudo pacman -S git`.
 
 
 ### Curl-Based Installation
@@ -84,7 +70,7 @@ You can choose one of the following methods to install:
     curl -LsS https://raw.githubusercontent.com/hoangvangioi/dotfilesvip/main/install.sh | bash
     ```
 
-**Note:** This method requires `curl`. If `curl` is not installed, you can install it using `sudo pacman -S curl`.
+    > **Note:** This method requires `curl`. If `curl` is not installed, you can install it using `sudo pacman -S curl`.
 
 ---
 
@@ -138,5 +124,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 Thank you for using and contributing to this dotfiles setup!
-
----
