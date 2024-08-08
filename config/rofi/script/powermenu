@@ -5,11 +5,11 @@ rofi_cmd="rofi -theme $DIR/rofi/themes/powermenu.rasi"
 uptime=$(uptime -p | sed -e 's/up //g')
 
 handle_choice() {
-    ans=$(rofi -dmenu -i -no-fixed-num-lines -p "Are You Sure? : " -theme "$DIR/rofi/themes/confirm.rasi")
+    ans=$(rofi -dmenu -i -no-fixed-num-lines -p "Are You Sure? (y/n) : " -theme "$DIR/rofi/themes/confirm.rasi")
     case "$ans" in
-        y) eval "$1" || rofi -theme "$DIR/rofi/themes/askpass.rasi" -e "Failed to execute $1";;
+        y) eval "$1" || rofi -e "Failed to execute $1";;
         n) exit 0;;
-        *) rofi -theme "$DIR/rofi/themes/askpass.rasi" -e "Options  -  yes / y / no / n";;
+        *) exit 0;;
     esac
 }
 

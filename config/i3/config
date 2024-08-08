@@ -41,6 +41,7 @@ bindsym $mod+c exec "~/.config/rofi/script/recorder"
 bindsym $mod+z exec "~/.config/rofi/script/bluetooth"
 bindsym $mod+p exec "~/.config/rofi/script/calendar"
 bindsym $mod+o exec "~/.config/rofi/script/web-search"
+bindsym $mod+i exec "~/.config/rofi/script/spotify"
 
 # Polybar toggle between hidden/visible
 bindsym $mod+t exec polybar-msg cmd toggle

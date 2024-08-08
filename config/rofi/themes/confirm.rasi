@@ -9,7 +9,7 @@ window {
     border-color:                  	@selector;
     border-radius:                  0px;
     fullscreen:                     false;
-    width:                          360px;
+    width:                          380px;
     location:                       center;
     anchor:                         center;
     x-offset:                       0;

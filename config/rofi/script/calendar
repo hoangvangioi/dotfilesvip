@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 current_day=$(date +"%e")
 current_month=$(date +"%m")
