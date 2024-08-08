@@ -38,38 +38,53 @@ Welcome to the ultimate Arch Linux setup with i3-wm. This guide will help you in
 
 ---
 
-## Quick Start Guide
+I see, you want a concise note within the guide itself, not detailed installation instructions. Here’s how to succinctly incorporate this information into the `Quick Start Guide`:
 
-### 1. Clone the Repository
+---
 
-```sh
-git clone https://github.com/hoangvangioi/dotfiles.git
-cd dotfiles
-```
+## How to Install
 
-### 2. Prepare the Installation Script
+Great! Here’s the updated guide with the new names for the installation methods:
 
-```sh
-chmod +x install.sh
-```
+---
 
-### 3. Run the Installation Script
+## Installation Instructions
 
-```sh
-./install.sh
-```
+You can choose one of the following methods to install:
 
-### 4. Install `curl` if Needed
+### Git-Based Installation
 
-```sh
-sudo pacman -S curl
-```
+1. **Clone the Repository**
 
-### 5. Optional: Run Additional Install Script
+    ```sh
+    git clone https://github.com/hoangvangioi/dotfiles.git
+    cd dotfiles
+    ```
 
-```sh
-curl -LsS https://raw.githubusercontent.com/hoangvangioi/dotfilesvip/main/install.sh | bash
-```
+2. **Prepare the Installation Script**
+
+    ```sh
+    chmod +x install.sh
+    ```
+
+3. **Run the Installation Script**
+
+    ```sh
+    ./install.sh
+    ```
+
+**Note:** This method requires `git`. If `git` is not installed, you can install it using `sudo pacman -S git`.
+
+
+### Curl-Based Installation
+
+1. **Run Additional Install Script**
+
+    ```sh
+    curl -LsS https://raw.githubusercontent.com/hoangvangioi/dotfilesvip/main/install.sh | bash
+    ```
+
+**Note:** This method requires `curl`. If `curl` is not installed, you can install it using `sudo pacman -S curl`.
 
 ---
 
@@ -107,24 +122,6 @@ Below are the basic keybindings. For more keybinds, refer to the [i3](./config/i
 | `Win + arrows (jkl;)`  | Resize or move windows                   |
 | `Win + Shift + E`      | Exit i3                                  |
 | `Win + Shift + R`      | Restart i3                               |
-
----
-
-## Dependencies
-
-Ensure the following packages are installed:
-
-| **Package** | **Purpose**                           |
-|-------------|---------------------------------------|
-| `git`       | For cloning the repository            |
-| `curl`      | For fetching additional scripts       |
-| `sudo`      | For executing commands with admin rights |
-
-Install them using:
-
-```sh
-sudo pacman -S git curl sudo
-```
 
 ---
 
