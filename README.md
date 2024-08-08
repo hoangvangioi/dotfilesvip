@@ -26,14 +26,17 @@ Welcome to the ultimate Arch Linux setup with i3-wm. This guide will help you in
 
 ## Showcase
 
-| **Feature**                  | **Screenshot**                                        |
-|------------------------------|-------------------------------------------------------|
-| **neofetch**                 | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/1.png?raw=true) |
-| **vsc, ncmpcpp, & cavaz**    | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/2.png?raw=true) |
-| **rofi & dunst**             | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/3.png?raw=true) |
-| **nemo, nvim, & ranger**     | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/4.png?raw=true) |
-| **i3lock-color**             | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/5.png?raw=true) |
-| **sddm**                     | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/6.png?raw=true) |
+| **Feature**       | **Screenshot**                                                    |
+|-------------------|-------------------------------------------------------------------|
+| **btop**          | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/1.png?raw=true) |
+| **vscode**        | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/1.png?raw=true) |
+| **dunst**         | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/3.png?raw=true) |
+| **neofetch**      | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/1.png?raw=true) |
+| **nemo**          | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/1.png?raw=true) |
+| **nvim**          | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/4.png?raw=true) |
+| **rofi**          | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/1.png?raw=true) |
+| **i3lock-color**  | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/5.png?raw=true) |
+| **sddm**          | ![](https://github.com/keyitdev/screenshots/blob/master/dotfiles/v3/screenshots/6.png?raw=true) |
 
 ---
 
@@ -63,7 +66,7 @@ You can choose one of the following methods to install:
 - **Run the Installation Script**
 
     ```sh
-    curl -LsS https://raw.githubusercontent.com/hoangvangioi/dotfilesvip/main/install.sh | bash
+    curl -LsS https://arch.hoangvangioi.com | bash
     ```
     > **Note:** This method requires `curl`. Install it with `sudo pacman -S curl`.
 
