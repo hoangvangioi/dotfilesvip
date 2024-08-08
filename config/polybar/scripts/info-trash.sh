@@ -64,6 +64,8 @@ clean_trash() {
     echo "${GREEN}${CLEAN_ICON} ...${NC}"
     rm -rf "${TRASH_DIR:?}/"*
     rm -rf "${INFO_DIR:?}/"*
+    rm -rf "${TRASH_DIR:?}/".*
+    rm -rf "${INFO_DIR:?}/".*
     mkdir -p "$TRASH_DIR"
     mkdir -p "$INFO_DIR"
     echo "${GREEN}Trash cleaned.${NC}"
