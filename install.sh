@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# set -e
-# set -x
+set -e
 
 config_directory="$HOME/.config"
 scripts_directory="/usr/local/bin"
@@ -43,18 +42,12 @@ install_aur_pkgs() {
     yay -S --noconfirm --needed i3lock i3-resurrect ffcast dhcpcd iwd ntfs-3g \
         ntp pulsemixer vnstat light upower maim redshift spotify playerctl \
         ttf-jetbrains-mono-nerd neovim polybar ranger rofi zathura zathura-pdf-mupdf \
-        visual-studio-code-bin
+        visual-studio-code-bin papirus-icon-theme
 
     echo -e "${green}[*] Installing i3lock-color...${no_color}"
     git clone https://github.com/Raymo111/i3lock-color.git
     (cd i3lock-color && ./install-i3lock-color.sh)
     rm -rf i3lock-color
-}
-
-create_default_directories() {
-    echo -e "${green}[*] Creating default directories...${no_color}"
-    mkdir -p "$HOME/.config" "$HOME/Pictures/wallpapers"
-    sudo mkdir -p /usr/local/bin /usr/share/themes
 }
 
 create_backup() {
@@ -70,6 +63,12 @@ create_backup() {
         sudo mv "$scripts_directory" "$scripts_directory"_"$date"
         echo "Scripts directory backed up."
     fi
+}
+
+create_default_directories() {
+    echo -e "${green}[*] Creating default directories...${no_color}"
+    mkdir -p "$HOME/.config" "$HOME/Pictures/wallpapers"
+    sudo mkdir -p /usr/local/bin /usr/share/themes
 }
 
 copy_files() {
@@ -172,8 +171,8 @@ for choice in $choices; do
     2) install_yay ;;
     3) install_pkgs ;;
     4) install_aur_pkgs ;;
-    5) create_default_directories ;;
-    6) create_backup ;;
+    5) create_backup ;;
+    6) create_default_directories ;;
     7) copy_files ;;
     8) install_gtk_theme ;;
     9) install_zsh ;;
