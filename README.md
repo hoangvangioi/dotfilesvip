@@ -26,8 +26,8 @@ Welcome to the ultimate Arch Linux setup with i3-wm. This guide will help you in
 
 ## Showcase
 
-| **Feature**       | **Screenshot**                                                    |
-|-------------------|-------------------------------------------------------------------|
+| **Feature**       | **Screenshot**                                        |
+|-------------------|-------------------------------------------------------|
 | **btop**          | ![](https://arch.hoangvangioi.com/btop.png)           |
 | **vscode**        | ![](https://arch.hoangvangioi.com/vscode.png)         |
 | **dunst**         | ![](https://arch.hoangvangioi.com/dunst.png)          |
