@@ -9,7 +9,7 @@ date=$(date +%s)
 green='\033[0;32m'
 no_color='\033[0m'
 
-sudo pacman --noconfirm --needed -Sy dialog
+sudo pacman -S --noconfirm --needed dialog
 
 system_update() {
     echo -e "${green}[*] Updating system...${no_color}"
@@ -82,7 +82,7 @@ copy_files() {
 
 install_gtk_theme() {
     echo -e "${green}[*] Installing GTK theme...${no_color}"
-    yay -S --noconfirm --needed reversal-icon-theme-git bibata-cursor-theme-bin
+    yay -S --noconfirm --needed bibata-cursor-theme-bin
     wget -q https://github.com/EliverLara/Sweet/releases/download/v5.0/Sweet-Dark-v40.tar.xz
     tar xvf Sweet-Dark-v40.tar.xz
     sudo mkdir -p /usr/share/themes/Sweet-Dark-v40
@@ -144,7 +144,7 @@ Current=sddm-arch-theme" | sudo tee /etc/sddm.conf
 }
 
 cmd=(dialog --clear --separate-output --checklist "Select tasks to perform (press space to select).\\n\
-Checked options are required for proper installation.\\nDo not uncheck if you are unsure." 20 80 15)
+Checked options are required for proper installation.\\nDo not uncheck if you are unsure." 21 80 15)
 
 
 options=(1 "System update" on
