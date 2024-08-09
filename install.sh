@@ -9,9 +9,10 @@ date=$(date +%s)
 green='\033[0;32m'
 no_color='\033[0m'
 
+sudo pacman --noconfirm --needed -Sy dialog
+
 system_update() {
     echo -e "${green}[*] Updating system...${no_color}"
-    sudo pacman --noconfirm --needed -Sy dialog
     sudo pacman -Sy --noconfirm archlinux-keyring
     sudo pacman --noconfirm -Syu
     sudo pacman -S --noconfirm --needed base-devel wget git curl
