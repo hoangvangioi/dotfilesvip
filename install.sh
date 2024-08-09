@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+set -x
 
 config_directory="$HOME/.config"
 scripts_directory="/usr/local/bin"
@@ -41,7 +42,8 @@ install_aur_pkgs() {
     echo -e "${green}[*] Installing packages with yay...${no_color}"
     yay -S --noconfirm --needed i3lock i3-resurrect ffcast dhcpcd iwd ntfs-3g \
         ntp pulsemixer vnstat light upower maim redshift spotify playerctl \
-        ttf-jetbrains-mono-nerd neovim polybar ranger rofi zathura zathura-pdf-mupdf
+        ttf-jetbrains-mono-nerd neovim polybar ranger rofi zathura zathura-pdf-mupdf \
+        visual-studio-code-bin
 
     echo -e "${green}[*] Installing i3lock-color...${no_color}"
     git clone https://github.com/Raymo111/i3lock-color.git
