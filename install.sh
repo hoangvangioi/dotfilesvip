@@ -1,7 +1,7 @@
 #!/bin/bash
 
-set -e
-set -x
+# set -e
+# set -x
 
 config_directory="$HOME/.config"
 scripts_directory="/usr/local/bin"
