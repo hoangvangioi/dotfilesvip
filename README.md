@@ -31,8 +31,8 @@ Welcome to the ultimate Arch Linux setup with i3-wm. This guide will help you in
 | **btop**          | ![](https://arch.hoangvangioi.com/btop.png)           |
 | **vscode**        | ![](https://arch.hoangvangioi.com/vscode.png)         |
 | **dunst**         | ![](https://arch.hoangvangioi.com/dunst.png)          |
-| **neofetch**      | ![](https://arch.hoangvangioi.com/neofetch.png)       |
-| **nemo**          | ![](https://arch.hoangvangioi.com/nemo.png)           |
+| **neofetch**      | ![](https://arch.hoangvangioi.com/neofetch.png#2)       |
+| **nemo**          | ![](https://arch.hoangvangioi.com/nemo.png#1)           |
 | **nvim**          | ![](https://arch.hoangvangioi.com/nvim_v2.png)           |
 | **rofi**          | ![](https://arch.hoangvangioi.com/rofi.png)           |
 | **i3lock-color**  | ![](https://arch.hoangvangioi.com/i3lock-color.png)   |
