@@ -74,12 +74,12 @@ create_backup() {
 
 copy_files() {
     echo -e "${green}[*] Copying files...${no_color}"
-    [ -d "./config" ] && cp -r ./config/* "$config_directory"
-    [ -d "./bin" ] && {
-        sudo cp -r ./bin/* "$scripts_directory"
+    [ -d "config" ] && cp -r config/* "$config_directory"
+    [ -d "bin" ] && {
+        sudo cp -r bin/* "$scripts_directory"
         sudo chmod +x "$scripts_directory"/*
     }
-    [ -d "./wallpapers" ] && cp -r ./wallpapers/* "$HOME/Pictures/wallpapers"
+    [ -d "wallpapers" ] && cp -r wallpapers/* "$HOME/Pictures/wallpapers"
 }
 
 install_gtk_theme() {
